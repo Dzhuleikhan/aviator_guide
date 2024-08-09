@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aviator</title>
   </head>
-  <body class="overscroll-none bg-[#1D062A]">
+  <body class="scroll-lock overscroll-none bg-[#1D062A]">
     <div class="wrapper h-full w-full min-w-80 overflow-hidden">
       <header class="absolute left-0 top-0 z-10 w-full pb-4 pt-6">
         <div class="container">
@@ -509,6 +509,31 @@
           </div>
         </section>
       </main>
+    </div>
+    <div
+      class="preloader fixed left-0 top-0 z-[9999] grid h-screen w-full place-items-center bg-black"
+    >
+      <div class="loader-wrapper flex flex-col items-center gap-3">
+        <img
+          class="loader-icon will-change-transform"
+          width="72"
+          height="72"
+          src="./img/loader-icon.svg"
+          alt="Loader icon"
+        />
+        <div
+          class="h-[6px] w-[134px] overflow-hidden rounded-[64px] bg-[#262932]"
+        >
+          <div
+            class="loader-line h-full w-full rounded-[64px] bg-[#e30437] will-change-transform"
+          ></div>
+        </div>
+      </div>
+      <p
+        class="loader-connection hidden font-roboto text-base font-light text-white"
+      >
+        Conntection...
+      </p>
     </div>
     <script type="module" src="/main.js"></script>
   </body>
