@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aviator</title>
+  </head>
+  <body class="overscroll-none bg-[#1D062A]">
+    <div class="wrapper h-full w-full min-w-80 overflow-hidden">
+      <header class="absolute left-0 top-0 z-10 w-full pb-4 pt-6">
+        <div class="container">
+          <div class="flex items-center justify-between">
+            <a href="#" class="medium:max-w-[94px]">
+              <img width="94" height="38" src="./img/logo.svg" alt="Aviator" />
+            </a>
+            <div>
+              <button
+                class="flex items-center gap-2 rounded-lg bg-[#2C2D31] px-3 py-[9px] font-bold"
+              >
+                <img
+                  width="24"
+                  height="24"
+                  class="h-6 w-6 overflow-hidden rounded-full"
+                  src="./img/us.svg"
+                  alt="USA"
+                />
+                <span>EN</span>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6 9L12 15L18 9"
+                    stroke="#A9AABF"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <!-- Hero section -->
+        <section
+          class="medium:pb-6 small:bg-[url(../img/hero-bg-sm.webp)] overflow-hidden bg-[url(../img/hero-bg.webp)] bg-cover bg-center bg-no-repeat pb-12 pt-[82px]"
+        >
+          <div class="container relative max-w-[767px] px-0 lg:px-[9px]">
+            <img
+              class="plane-left absolute min-w-[562px] will-change-transform lg:hidden"
+              width="562"
+              height="255"
+              src="./img/plane-left.webp"
+              alt="Plane"
+            />
+            <img
+              class="plane-right absolute min-w-[1230px] will-change-transform lg:hidden"
+              width="1230"
+              height="556"
+              src="./img/plane-right.webp"
+              alt="Plane"
+            />
+            <!-- GAME -->
+            <div
+              class="medium:h-[300px] medium:rounded-[18px] small:h-[206px] relative z-40 h-[442px] w-full rounded-[39px] border-2 border-[#C4C4C4] bg-black shadow-gameShadow"
+            ></div>
+            <!-- INFO -->
+            <div class="relative z-40 mx-auto mt-4 max-w-[583px]">
+              <div class="medium:flex-col flex items-center gap-4">
+                <div class="flex flex-col items-center">
+                  <img
+                    width="258"
+                    height="109s"
+                    src="./img/bonus-text.svg"
+                    alt="500%"
+                  />
+                  <p class="text-xs font-extrabold italic leading-none">
+                    BONUS ON YOUR FIRST TOP-UP
+                  </p>
+                </div>
+                <button
+                  class="green-btn my-auto max-w-[310px] cursor-pointer px-8 py-4 font-roboto text-[24px] font-semibold leading-tight"
+                >
+                  ПОЛУЧИТЬ БОНУС 500%
+                </button>
+              </div>
+              <p class="mt-4 text-center text-[9px] font-light">
+                POWERED BY <br />
+                <span
+                  class="font-robotoCond text-[25px] font-bold underline underline-offset-4"
+                  >SPRIBE</span
+                >
+              </p>
+            </div>
+          </div>
+        </section>
+        <!-- Crypto logos -->
+        <div class="bg-[#300555] py-3">
+          <div>
+            <ul class="crypto-list flex items-center gap-4">
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img
+                  width="102"
+                  height="20"
+                  src="./img/cardano.svg"
+                  alt="Cardano"
+                />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img
+                  width="93"
+                  height="16"
+                  src="./img/cosmos.svg"
+                  alt="cosmos"
+                />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img
+                  width="101"
+                  height="18"
+                  src="./img/bnbchain.svg"
+                  alt="bnbchain"
+                />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img
+                  width="84"
+                  height="18"
+                  src="./img/bitcoin.svg"
+                  alt="bitcoin"
+                />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img
+                  width="100"
+                  height="25"
+                  src="./img/etherium.svg"
+                  alt="etherium"
+                />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img
+                  width="86"
+                  height="22"
+                  src="./img/fantom.svg"
+                  alt="fantom"
+                />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img
+                  width="85"
+                  height="27"
+                  src="./img/filecoin.svg"
+                  alt="filecoin"
+                />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img
+                  width="102"
+                  height="28"
+                  src="./img/hedera.svg"
+                  alt="hedera"
+                />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img
+                  width="86"
+                  height="22"
+                  src="./img/ripple.svg"
+                  alt="ripple"
+                />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img
+                  width="88"
+                  height="25"
+                  src="./img/litecoin.svg"
+                  alt="litecoin"
+                />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img width="82" height="33" src="./img/zcash.svg" alt="zcash" />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img
+                  width="98"
+                  height="14"
+                  src="./img/solana.svg"
+                  alt="solana"
+                />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img
+                  width="94"
+                  height="22"
+                  src="./img/usdcoin.svg"
+                  alt="usdcoin"
+                />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img width="76" height="23" src="./img/tron.svg" alt="tron" />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img
+                  width="93"
+                  height="20"
+                  src="./img/tether.svg"
+                  alt="tether"
+                />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img
+                  width="87"
+                  height="22"
+                  src="./img/stellar.svg"
+                  alt="stellar"
+                />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img
+                  width="102"
+                  height="20"
+                  src="./img/cardano.svg"
+                  alt="Cardano"
+                />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img
+                  width="93"
+                  height="16"
+                  src="./img/cosmos.svg"
+                  alt="cosmos"
+                />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img
+                  width="101"
+                  height="18"
+                  src="./img/bnbchain.svg"
+                  alt="bnbchain"
+                />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img
+                  width="84"
+                  height="18"
+                  src="./img/bitcoin.svg"
+                  alt="bitcoin"
+                />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img
+                  width="100"
+                  height="25"
+                  src="./img/etherium.svg"
+                  alt="etherium"
+                />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img
+                  width="86"
+                  height="22"
+                  src="./img/fantom.svg"
+                  alt="fantom"
+                />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img
+                  width="85"
+                  height="27"
+                  src="./img/filecoin.svg"
+                  alt="filecoin"
+                />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img
+                  width="102"
+                  height="28"
+                  src="./img/hedera.svg"
+                  alt="hedera"
+                />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img
+                  width="86"
+                  height="22"
+                  src="./img/ripple.svg"
+                  alt="ripple"
+                />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img
+                  width="88"
+                  height="25"
+                  src="./img/litecoin.svg"
+                  alt="litecoin"
+                />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img width="82" height="33" src="./img/zcash.svg" alt="zcash" />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img
+                  width="98"
+                  height="14"
+                  src="./img/solana.svg"
+                  alt="solana"
+                />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img
+                  width="94"
+                  height="22"
+                  src="./img/usdcoin.svg"
+                  alt="usdcoin"
+                />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img width="76" height="23" src="./img/tron.svg" alt="tron" />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img
+                  width="93"
+                  height="20"
+                  src="./img/tether.svg"
+                  alt="tether"
+                />
+              </li>
+              <li
+                class="flex h-[80px] w-[116px] shrink-0 items-center justify-center"
+              >
+                <img
+                  width="87"
+                  height="22"
+                  src="./img/stellar.svg"
+                  alt="stellar"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Guide section -->
+        <section
+          class="extralg:py-10 medium:py-6 bg-[url(../img/guide-bg.webp)] bg-cover bg-center bg-no-repeat py-20"
+        >
+          <div class="container">
+            <div class="mx-auto flex max-w-[343px] flex-col items-center gap-3">
+              <img
+                class="guide-logo"
+                width="36"
+                height="36"
+                src="./img/prop-logo.svg"
+                alt="Logo"
+              />
+              <p
+                class="guide-title text-center text-[32px] font-black uppercase text-[#28133a]"
+              >
+                как получить бонус?
+              </p>
+            </div>
+            <div
+              class="extralg:flex extralg:gap-0 small:mt-5 extralg:flex-col extralg:items-center mt-[50px] grid grid-cols-3 gap-5 lg:mt-[30px]"
+            >
+              <div
+                class="guide-card-1 xs:pb-3 extralg:flex extralg:min-h-[160px] guide-card extralg:top-0 relative -top-20 flex max-w-[343px] items-end px-[14px] py-5 text-center"
+              >
+                <div
+                  class="xs:gap-[6px] relative z-[3] flex flex-col items-center justify-end gap-[10px]"
+                >
+                  <p
+                    class="guide-card-number extralg:text-[65px] absolute bottom-full left-1/2 -translate-x-1/2 text-[82px] font-black italic leading-none"
+                  >
+                    1
+                  </p>
+                  <p
+                    class="guide-card-yellow-text xs:text-sm text-[18px] font-black text-[#f6cd46]"
+                  >
+                    ЗАРЕГИСТРИРУЙТЕСЬ
+                  </p>
+                  <span class="xs:text-sm text-base"
+                    >Нажмите “Получить Бонус” и введите свою почту и
+                    пароль.</span
+                  >
+                </div>
+              </div>
+              <div
+                class="guide-card-2 extralg:flex xs:pb-3 extralg:min-h-[180px] guide-card relative max-w-[343px] px-[14px] py-5 pb-3 text-center"
+              >
+                <div
+                  class="xs:gap-[6px] relative z-[3] flex flex-col items-center justify-end gap-[10px]"
+                >
+                  <p
+                    class="guide-card-number extralg:text-[65px] extralg:bottom-auto xs:-top-2 extralg:-top-8 absolute bottom-full left-1/2 -translate-x-1/2 text-[82px] font-black italic leading-none"
+                  >
+                    2
+                  </p>
+                  <p
+                    class="guide-card-yellow-text xs:text-sm text-[18px] font-black text-[#f6cd46]"
+                  >
+                    АКТИВИРУЙТЕ БОНУС
+                  </p>
+                  <span class="xs:text-sm text-base"
+                    >В бонусном центре вам уже доступен велком-бонус.</span
+                  >
+                  <a
+                    href="#"
+                    class="text-center text-base capitalize underline underline-offset-4"
+                    >Bonus terms</a
+                  >
+                </div>
+              </div>
+              <div
+                class="guide-card xs:pb-3 extralg:flex extralg:min-h-[160px] guide-card-3 extralg:top-0 relative -top-20 flex max-w-[343px] items-end px-[14px] py-5 text-center"
+              >
+                <div
+                  class="xs:gap-[6px] relative z-[3] flex flex-col items-center justify-end gap-[10px]"
+                >
+                  <p
+                    class="guide-card-number extralg:text-[65px] absolute bottom-full left-1/2 -translate-x-1/2 text-[82px] font-black italic leading-none"
+                  >
+                    3
+                  </p>
+                  <p
+                    class="guide-card-yellow-text xs:text-sm text-[18px] font-black text-[#f6cd46]"
+                  >
+                    СДЕЛАЙТЕ ДЕПОЗИТ
+                  </p>
+                  <span class="xs:text-sm text-base"
+                    >Выберите удобный платежный метод и выполните депозит.</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="mt-5 flex justify-center">
+              <button
+                class="green-btn max-w-[310px] cursor-pointer px-8 py-4 font-roboto text-[24px] font-semibold leading-tight"
+              >
+                ПОЛУЧИТЬ БОНУС 500%
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

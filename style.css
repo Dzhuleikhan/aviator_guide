@@ -1,0 +1,187 @@
+@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/Raleway-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/Raleway-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/Raleway-ExtraBoldItalic.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/Raleway-ExtraBold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/Raleway-BlackItalic.woff2') format('woff2');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/Raleway-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url('../fonts/RobotoCondensed-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply text-white font-raleway
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-[1110px]
+  }
+}
+
+html {
+  font-variant-numeric: lining-nums;
+  -moz-font-feature-settings: "lnum" 1;
+  -moz-font-feature-settings: "lnum=1";
+  -ms-font-feature-settings: "lnum" 1;
+  -o-font-feature-settings: "lnum" 1;
+  -webkit-font-feature-settings: "lnum" 1;
+  font-feature-settings: "lnum" 1;
+  user-select: none;
+}
+
+/* HERO SECTION */
+
+/* .big-bonus-text {
+  text-shadow: #f0f0f0 1px 0px 0px, #f0f0f0 0.540302px 0.841471px 0px, #f0f0f0 -0.416147px 0.909297px 0px, #f0f0f0 -0.989992px 0.14112px 0px, #f0f0f0 -0.653644px -0.756802px 0px, #f0f0f0 0.283662px -0.958924px 0px, #f0f0f0 0.96017px -0.279415px 0px;
+} */
+
+.hero-bonus-big {
+  position: relative;
+  background: linear-gradient(180deg, #28a809 0%, #fff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-bonus-big::before {
+  content: '+500%';
+  /* Replace this with your actual text */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  color: #f0f0f0;
+  text-shadow: 2px 0px 0px #ff0000,
+    2px 2px 0px #ff0000,
+    -2px 2px 0px #ff0000,
+    -2px 2px 0px #ff0000,
+    -2px -2px 0px #ff0000,
+    2px -2px 0px #ff0000,
+    2px -2px 0px #ff0000;
+  pointer-events: none;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.green-btn {
+  box-shadow: inset 0 4px 4px 0 rgba(255, 255, 255, 0.25);
+  background: #28a809;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 24px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.guide-title {
+  text-shadow: rgb(240, 240, 240) 2px 0px 0px, rgb(240, 240, 240) 1.75517px 0.958851px 0px, rgb(240, 240, 240) 1.0806px 1.68294px 0px, rgb(240, 240, 240) 0.141474px 1.99499px 0px, rgb(240, 240, 240) -0.832294px 1.81859px 0px, rgb(240, 240, 240) -1.60229px 1.19694px 0px, rgb(240, 240, 240) -1.97998px 0.28224px 0px, rgb(240, 240, 240) -1.87291px -0.701566px 0px, rgb(240, 240, 240) -1.30729px -1.5136px 0px, rgb(240, 240, 240) -0.421592px -1.95506px 0px, rgb(240, 240, 240) 0.567324px -1.91785px 0px, rgb(240, 240, 240) 1.41734px -1.41108px 0px, rgb(240, 240, 240) 1.92034px -0.558831px 0px, 0 0 16px #fff;
+}
+
+.guide-card::before {
+  content: '';
+  width: 100%;
+  height: 180px;
+  background: url('../img/guide-card-bg.webp');
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: contain;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.guide-card-1::before {
+  background: url('../img/guide-card-bg160.webp');
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: contain;
+}
+
+.guide-card-3::before {
+  background: url('../img/guide-card-bg160.webp');
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: contain;
+}
+
+.guide-card p,
+.guide-card span,
+.guide-card a {
+  text-shadow: -4px 4px 8px rgba(0, 0, 0, 0.5);
+}
