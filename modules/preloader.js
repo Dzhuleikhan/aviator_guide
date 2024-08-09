@@ -23,6 +23,7 @@ gsap.to(loaderLine, {
       ease: "none",
       onComplete: () => {
         preloader.classList.add("is-hidden");
+        document.body.classList.remove("scroll-lock");
       },
     });
   },
