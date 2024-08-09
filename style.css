@@ -195,3 +195,7 @@ html {
 .guide-card a {
   text-shadow: -4px 4px 8px rgba(0, 0, 0, 0.5);
 }
+
+.game-inner {
+  background: radial-gradient(50% 50% at 50% 50%, rgb(30, 44, 123) 0%, rgb(13, 13, 14) 100%);
+}
