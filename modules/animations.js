@@ -73,12 +73,5 @@ horizontalLoop(".crypto-list", {
   paused: false,
   speed: 0.3,
 });
-horizontalLoop(".game-dots", {
-  repeat: -1,
-  paused: false,
-  speed: 0.3,
-});
 
 gsap.to(".guide-logo", { rotate: 360, duration: 2, ease: "none", repeat: -1 });
-
-gsap.to(".game-rays", { rotate: 360, duration: 15, ease: "none", repeat: -1 });

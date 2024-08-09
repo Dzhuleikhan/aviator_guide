@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import { gameTl } from "./aviatorGame";
 
 const preloader = document.querySelector(".preloader");
 const preloaderIcon = document.querySelector(".loader-icon");
@@ -24,6 +25,7 @@ gsap.to(loaderLine, {
       onComplete: () => {
         preloader.classList.add("is-hidden");
         document.body.classList.remove("scroll-lock");
+        gameTl.play();
       },
     });
   },
