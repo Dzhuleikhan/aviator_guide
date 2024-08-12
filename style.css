@@ -128,6 +128,304 @@ html {
   transition: all 0.3s;
 }
 
+/* FORM */
+
+.iti {
+  width: 100%;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(240, 240, 240, 0.2);
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.iti .phone-input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+}
+
+.iti__country-list li {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 8px;
+  background-color: #253265;
+}
+
+.iti__search-input {
+  display: none !important;
+}
+
+.iti__country-list li.iti__highlight {
+  background-color: #33417B;
+}
+
+.iti__country-list li span {
+  color: #f0f0f0;
+}
+
+.iti__dropdown-content {
+  top: 105%;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  border-color: #4E5881 !important;
+}
+
+.main-overlay.is-open {
+  display: grid;
+}
+
+.form-content {
+  display: none;
+}
+
+.form-content.active {
+  display: block;
+}
+
+.modal-tabs button.active {
+  border-color: #28A809;
+  color: #28A809;
+}
+
+.modal-tabs button[data-tab='email'].active svg {
+  stroke: #28A809;
+}
+
+.modal-tabs button[data-tab='phone'].active svg {
+  stroke: #28A809;
+}
+
+.modal-tabs button[data-tab='social'].active svg {
+  fill: #28A809;
+}
+
+.modal-tabs button[data-tab='oneclick'].active svg {
+  stroke: #28A809;
+}
+
+.checkbox:hover .checkbox-content::before {
+  background-image: url('../img/unckecked.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.checkbox-input:checked+.checkbox-content::before {
+  background: url('../img/ckecked.svg'), #28A809;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+}
+
+.checkbox-content::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid #272f50;
+  background-color: #0e0f20;
+  position: absolute;
+  left: 0;
+  top: 3px;
+}
+
+.socials-item {
+  box-shadow: inset 0 2px 3px 0 rgba(255, 255, 255, 0.25);
+  background: #253265;
+  position: relative;
+  overflow: hidden;
+}
+
+.socials-item::before {
+  content: '';
+  width: 30px;
+  height: 8px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: blur(4px);
+}
+
+.social-variant-input:checked+.socials-item {
+  background-color: #fff;
+}
+
+.social-variant-input:checked+.socials-item svg {
+  fill: #0e0f20;
+}
+
+/* Validation */
+
+.valid {
+  border-color: #4ED937;
+}
+
+.non-valid {
+  border-color: #FF5530;
+}
+
+.form-email.valid .validation-cta .correct {
+  display: block;
+}
+
+.form-email.non-valid .validation-cta {
+  display: flex;
+}
+
+.form-email.non-valid .validation-cta .wrong {
+  display: block;
+}
+
+.form-password.valid .password-cta .correct {
+  display: block;
+}
+
+.form-password.non-valid .password-cta .wrong {
+  display: block;
+}
+
+.error-alert.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.error-alert::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+
+  border-top: 6px solid #f0f0f0;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+}
+
+.terms-input.non-valid+span::before {
+  border-color: #FF5530;
+}
+
+.form-phone.valid {
+  border: 1px solid #4ED937;
+  border-radius: 8px;
+}
+
+.form-phone.valid .form-phone-cta {
+  display: block;
+}
+
+.form-phone.non-valid .form-phone-cta {
+  display: block;
+}
+
+.form-phone.valid .form-phone-cta .correct {
+  display: block;
+}
+
+.form-phone.non-valid .form-phone-cta .wrong {
+  display: block;
+}
+
+.form-phone.non-valid {
+  border: 1px solid #FF5530;
+  border-radius: 8px;
+}
+
+.modal-tabs button::before {
+  content: '';
+  width: 50px;
+  height: 30px;
+  border-radius: 50px;
+  background: #28A80950;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -20px;
+  z-index: 2;
+  filter: blur(15px);
+  will-change: filter;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.modal-tabs button.active::after {
+  content: '';
+  width: 50px;
+  height: 30px;
+  border-radius: 50px;
+  background: #28A80950;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -20px;
+  z-index: 10;
+  filter: blur(15px);
+  will-change: filter;
+}
+
+.modal-tabs button.active::before {
+  display: none;
+}
+
+.modal-tabs button:hover::before {
+  opacity: 1;
+}
+
+.modal-tabs button.active:hover::before {
+  background: #28A80950;
+}
+
+.decline-title {
+  filter: drop-shadow(0px 0px 15px #000000);
+}
+
+.decline-title span {
+  background: linear-gradient(180deg, #ff9696 0%, #ff3838 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.decline-yellow-btn {
+  box-shadow: inset 0 4px 4px 0 rgba(255, 255, 255, 0.75);
+  background: linear-gradient(180deg, #f4fd2b 0%, #ffa434 100%);
+}
+
+
+.form-yellow-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.form-yellow-btn::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f020;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s;
+}
+
+.form-yellow-btn:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.from-green-btn {
+  box-shadow: inset 0 4px 4px 0 rgba(255, 255, 255, 0.75);
+  background: #28a809;
+  color: #f0f0f0;
+}
+
 /* GAME COMPONENT */
 
 .game-inner.colored {

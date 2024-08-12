@@ -14,10 +14,10 @@ const gamePlaneImage = document.querySelector(".game-plane");
 const gameStartLoader = document.querySelector(".game-start-loader");
 const winLoaderLine = document.querySelector(".winning-loader-line");
 
-document.addEventListener("click", () => {
-  bgAudio.play();
-  bgAudio.volume = 0.1;
-});
+// document.addEventListener("click", () => {
+//   bgAudio.play();
+//   bgAudio.volume = 0.1;
+// });
 
 horizontalLoop(".game-dots", {
   repeat: -1,
@@ -83,8 +83,8 @@ gameTl
       winCountWrapper.classList.remove("hidden");
       gameInner.classList.add("colored");
       raysTl.play();
-      startSound.play();
-      startSound.volume = 0.1;
+      // startSound.play();
+      // startSound.volume = 0.1;
     },
   })
   .to(gameGraph, {
@@ -99,8 +99,8 @@ gameTl
         winCountNumber.classList.add("lost");
         winCountTitle.classList.remove("hidden");
       }, 500);
-      flewAway.play();
-      flewAway.volume = 0.1;
+      // flewAway.play();
+      // flewAway.volume = 0.1;
       gsap.to(".game-plane", {
         x: 200,
         delay: 0.5,
