@@ -40,30 +40,6 @@ function setCurrency(abbr, name, icon) {
   });
 }
 
-async function settingModalCurrency() {
-  try {
-    let locationData = await getLocation();
-    const countryInput = locationData.country;
-
-    const currencyAbbr = getCountryCurrencyABBR(countryInput);
-    const currencyFullName = getCountryCurrencyFullName(countryInput);
-    const currencyIcon = getCountryCurrencyIcon(countryInput);
-
-    const currencyData = {
-      abbr: currencyAbbr,
-      name: currencyFullName,
-      icon: currencyIcon,
-    };
-
-    // Save to local storage
-    localStorage.setItem("currencyData", JSON.stringify(currencyData));
-
-    setCurrency(currencyAbbr, currencyFullName, currencyIcon);
-  } catch (error) {
-    console.error("Error fetching location data:", error);
-  }
-}
-
 function loadCurrencyFromLocalStorage() {
   const currencyData = JSON.parse(localStorage.getItem("currencyData"));
   if (currencyData) {
@@ -135,15 +111,26 @@ formCurrency.forEach((cur) => {
   }
 });
 
-async function mainSetCurrency() {
+async function settingModalCurrency() {
   try {
     let locationData = await getLocation();
-    const countryInput = locationData.country.toLowerCase();
+    const countryInput = locationData.country;
 
-    // Currency
-    const currencyName = getCountryCurrencyABBR(locationData.country);
+    const currencyAbbr = getCountryCurrencyABBR(countryInput);
+    const currencyFullName = getCountryCurrencyFullName(countryInput);
+    const currencyIcon = getCountryCurrencyIcon(countryInput);
+
+    const currencyData = {
+      abbr: currencyAbbr,
+      name: currencyFullName,
+      icon: currencyIcon,
+    };
+
+    // Save to local storage
+    localStorage.setItem("currencyData", JSON.stringify(currencyData));
+
+    setCurrency(currencyAbbr, currencyFullName, currencyIcon);
   } catch (error) {
     console.error("Error fetching location data:", error);
   }
 }
-mainSetCurrency();
