@@ -1,9 +1,29 @@
 import gsap from "gsap";
 import horizontalLoop from "./marquee";
+import { getUrlParameter, setUrlParameter } from "./params";
 
 export const bgAudio = new Audio("./sounds/bg_music.mp3");
-const flewAway = new Audio("./sounds/flew_away.mp3");
-const startSound = new Audio("./sounds/start_sound.mp3");
+export const flewAway = new Audio("./sounds/flew_away.mp3");
+export const startSound = new Audio("./sounds/start_sound.mp3");
+
+const soundBtn = document.querySelector(".sound-btn");
+let soundParameter = getUrlParameter("sound");
+
+if (soundBtn) {
+  soundBtn.addEventListener("click", () => {
+    if (soundParameter === "off") {
+      console.log("Turned on");
+      setUrlParameter("sound", "on");
+      soundParameter = "on";
+    } else if (soundParameter === "on") {
+      setUrlParameter("sound", "off");
+      soundParameter = "off";
+      bgAudio.pause();
+      flewAway.pause();
+      startSound.pause();
+    }
+  });
+}
 
 const gameInner = document.querySelector(".game-inner");
 const gameGraph = document.querySelector(".graph");
@@ -14,10 +34,12 @@ const gamePlaneImage = document.querySelector(".game-plane");
 const gameStartLoader = document.querySelector(".game-start-loader");
 const winLoaderLine = document.querySelector(".winning-loader-line");
 
-// document.addEventListener("click", () => {
-//   bgAudio.play();
-//   bgAudio.volume = 0.1;
-// });
+document.addEventListener("click", () => {
+  if (soundParameter != "off") {
+    bgAudio.play();
+    bgAudio.volume = 0.3;
+  }
+});
 
 horizontalLoop(".game-dots", {
   repeat: -1,
@@ -83,8 +105,10 @@ gameTl
       winCountWrapper.classList.remove("hidden");
       gameInner.classList.add("colored");
       raysTl.play();
-      // startSound.play();
-      // startSound.volume = 0.1;
+      if (soundParameter != "off") {
+        startSound.play();
+        startSound.volume = 0.3;
+      }
     },
   })
   .to(gameGraph, {
@@ -99,8 +123,10 @@ gameTl
         winCountNumber.classList.add("lost");
         winCountTitle.classList.remove("hidden");
       }, 500);
-      // flewAway.play();
-      // flewAway.volume = 0.1;
+      if (soundParameter != "off") {
+        flewAway.play();
+        flewAway.volume = 0.3;
+      }
       gsap.to(".game-plane", {
         x: 200,
         delay: 0.5,
