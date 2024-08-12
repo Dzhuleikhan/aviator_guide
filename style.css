@@ -115,10 +115,42 @@ html {
   transition: all 0.2s;
 }
 
+.header-lang-list {
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top left;
+  transition: all 0.3s;
+}
+
+.header-lang-list.is-open {
+  opacity: 1;
+  transform: scaleY(1);
+  transition: all 0.3s;
+}
+
 /* GAME COMPONENT */
 
 .game-inner.colored {
   background: radial-gradient(50% 50% at 50% 50%, rgb(30, 44, 123) 0%, rgb(13, 13, 14) 100%);
+  animation: gradientChange 6s ease-in-out infinite;
+}
+
+@keyframes gradientChange {
+  0% {
+    background: radial-gradient(50% 50% at 50% 50%, rgb(30, 44, 123) 0%, rgb(13, 13, 14) 100%);
+  }
+
+  33% {
+    background: radial-gradient(50% 50% at 50% 50%, rgb(87, 27, 93) 0%, rgb(13, 13, 14) 100%);
+  }
+
+  66% {
+    background: radial-gradient(50% 50% at 50% 50%, rgb(27, 45, 93) 0%, rgb(13, 13, 14) 100%);
+  }
+
+  100% {
+    background: radial-gradient(50% 50% at 50% 50%, rgb(27, 93, 30) 0%, rgb(13, 13, 14) 100%);
+  }
 }
 
 .win-count-text.lost {

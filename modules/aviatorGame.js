@@ -16,7 +16,7 @@ const winLoaderLine = document.querySelector(".winning-loader-line");
 
 document.addEventListener("click", () => {
   bgAudio.play();
-  bgAudio.volume = 0.4;
+  bgAudio.volume = 0.1;
 });
 
 horizontalLoop(".game-dots", {
@@ -27,7 +27,7 @@ horizontalLoop(".game-dots", {
 
 gsap.to(".game-start-loader-icon", {
   rotate: 360,
-  duration: 2,
+  duration: 1,
   ease: "none",
   repeat: -1,
   transformOrigin: "center center",
@@ -84,6 +84,7 @@ gameTl
       gameInner.classList.add("colored");
       raysTl.play();
       startSound.play();
+      startSound.volume = 0.1;
     },
   })
   .to(gameGraph, {
@@ -99,6 +100,7 @@ gameTl
         winCountTitle.classList.remove("hidden");
       }, 500);
       flewAway.play();
+      flewAway.volume = 0.1;
       gsap.to(".game-plane", {
         x: 200,
         delay: 0.5,

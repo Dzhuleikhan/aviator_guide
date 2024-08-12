@@ -1,47 +1,114 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./img/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aviator</title>
   </head>
-  <body class="select-none overscroll-none bg-[#1D062A]">
+  <body class="overscroll-none bg-[#1D062A]">
     <div class="wrapper h-full w-full min-w-80 overflow-hidden">
-      <header class="absolute left-0 top-0 z-10 w-full pb-4 pt-6">
+      <header class="absolute left-0 top-0 z-[200] w-full pb-4 pt-6">
         <div class="container">
           <div class="flex items-center justify-between">
             <a href="#" class="medium:max-w-[94px]">
               <img width="94" height="38" src="./img/logo.svg" alt="Aviator" />
             </a>
             <div>
-              <button
-                class="flex items-center gap-2 rounded-lg bg-[#2C2D31] px-3 py-[9px] font-bold"
-              >
-                <img
-                  width="24"
-                  height="24"
-                  class="h-6 w-6 overflow-hidden rounded-full"
-                  src="./img/us.svg"
-                  alt="USA"
-                />
-                <span>EN</span>
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+              <div class="header-lang-box relative">
+                <button
+                  class="header-lang-btn flex items-center justify-center gap-2 rounded-lg bg-[#2C2D31] px-3 py-[9px] font-bold transition-all hover:bg-[#4a4b51]"
                 >
-                  <path
-                    d="M6 9L12 15L18 9"
-                    stroke="#A9AABF"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                  <img
+                    class="overflow-hidden rounded-full"
+                    width="20"
+                    height="20"
+                    src="./img/flags/en.svg"
+                    alt="English"
                   />
-                </svg>
-              </button>
+                  <span>EN</span>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6 9L12 15L18 9"
+                      stroke="#A9AABF"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+                <ul
+                  class="header-lang-list absolute right-0 top-[110%] w-full overflow-hidden rounded-lg font-bold duration-300"
+                >
+                  <li>
+                    <a
+                      data-lang="en"
+                      class="language-link flex items-center gap-2 bg-[#2C2D31] px-3 py-[9px] transition-all hover:bg-[#4a4b51]"
+                      href="#"
+                      ><img
+                        class="pointer-events-none shrink-0 overflow-hidden rounded-full"
+                        width="20"
+                        height="20"
+                        src="./img/flags/en.svg"
+                        alt="eng flag"
+                      />
+                      <span class="pointer-events-none">EN</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      data-lang="ru"
+                      class="language-link flex items-center gap-2 bg-[#2C2D31] px-3 py-[9px] transition-all hover:bg-[#4a4b51]"
+                      href="#"
+                      ><img
+                        class="pointer-events-none shrink-0 overflow-hidden rounded-full"
+                        width="20"
+                        height="20"
+                        src="./img/flags/ru.svg"
+                        alt="Ru flag"
+                      />
+                      <span class="pointer-events-none">RU</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      data-lang="fr"
+                      class="language-link flex items-center gap-2 bg-[#2C2D31] px-3 py-[9px] transition-all hover:bg-[#4a4b51]"
+                      href="#"
+                      ><img
+                        class="pointer-events-none shrink-0 overflow-hidden rounded-full"
+                        width="20"
+                        height="20"
+                        src="./img/flags/fr.svg"
+                        alt="FR flag"
+                      />
+                      <span class="pointer-events-none">FR</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      data-lang="es"
+                      class="language-link flex items-center gap-2 bg-[#2C2D31] px-3 py-[9px] transition-all hover:bg-[#4a4b51]"
+                      href="#"
+                    >
+                      <img
+                        class="pointer-events-none shrink-0 overflow-hidden rounded-full"
+                        width="20"
+                        height="20"
+                        src="./img/flags/es.svg"
+                        alt="es flag"
+                      />
+                      <span class="pointer-events-none">ES</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -49,7 +116,7 @@
       <main>
         <!-- Hero section -->
         <section
-          class="medium:pb-6 small:bg-[url(../img/hero-bg-sm.webp)] overflow-hidden bg-[url(../img/hero-bg-2.webp)] bg-cover bg-center bg-no-repeat pb-12 pt-[82px]"
+          class="overflow-hidden bg-[url(../img/hero-bg-2.webp)] bg-cover bg-center bg-no-repeat pb-12 pt-[82px] medium:pb-6 small:bg-[url(../img/hero-bg-sm.webp)]"
         >
           <div class="container relative max-w-[767px] px-0 lg:px-[9px]">
             <img
@@ -68,7 +135,7 @@
             />
             <!-- GAME -->
             <div
-              class="medium:h-[300px] medium:rounded-[18px] small:h-[206px] relative z-40 grid h-[442px] w-full grid-rows-[1fr_auto] overflow-hidden rounded-[39px] border-2 border-[#C4C4C4] bg-black shadow-gameShadow"
+              class="relative z-40 grid h-[442px] w-full grid-rows-[1fr_auto] overflow-hidden rounded-[39px] border-2 border-[#C4C4C4] bg-black shadow-gameShadow medium:h-[300px] medium:rounded-[18px] small:h-[206px]"
             >
               <div class="game-inner colored relative overflow-hidden">
                 <img
@@ -104,12 +171,12 @@
                   class="win-count-wrapper absolute left-1/2 top-1/2 flex hidden -translate-x-1/2 -translate-y-1/2 flex-col items-center text-center"
                 >
                   <p
-                    class="win-count-title medium:text-[13px] hidden text-[20px] font-bold uppercase"
+                    class="win-count-title hidden text-[20px] font-bold uppercase medium:text-[13px]"
                   >
                     fLEW AWAY
                   </p>
                   <p
-                    class="win-count-text medium:text-[47px] text-[100px] font-bold leading-none"
+                    class="win-count-text text-[100px] font-bold leading-none medium:text-[47px]"
                   >
                     <span class="win-count">0.00</span>x
                   </p>
@@ -123,7 +190,7 @@
                       alt="Graph"
                     />
                     <img
-                      class="game-plane medium:min-w-[70px] medium:max-w-[70px] medium:-right-[25px] medium:-top-[25px] absolute -right-[50px] -top-[50px] min-w-[144px]"
+                      class="game-plane absolute -right-[50px] -top-[50px] min-w-[144px] medium:-right-[25px] medium:-top-[25px] medium:min-w-[70px] medium:max-w-[70px]"
                       width="144"
                       height="78"
                       src="./img/game-plane.svg"
@@ -319,7 +386,7 @@
             </div>
             <!-- INFO -->
             <div class="relative z-40 mx-auto mt-4 max-w-[583px]">
-              <div class="medium:flex-col flex items-center gap-4">
+              <div class="flex items-center gap-4 medium:flex-col">
                 <div class="flex flex-col items-center">
                   <img
                     width="258"
@@ -332,9 +399,9 @@
                   </p>
                 </div>
                 <button
-                  class="green-btn my-auto max-w-[310px] cursor-pointer px-8 py-4 font-roboto text-[24px] font-semibold leading-tight"
+                  class="green-btn shake-btn my-auto w-full max-w-[310px] cursor-pointer px-8 py-4 font-roboto text-[24px] font-semibold uppercase leading-tight"
                 >
-                  ПОЛУЧИТЬ БОНУС 500%
+                  <span data-translate="mainButton">ПОЛУЧИТЬ БОНУС 500%</span>
                 </button>
               </div>
               <p class="mt-4 text-center text-[9px] font-light">
@@ -656,7 +723,7 @@
         </div>
         <!-- Guide section -->
         <section
-          class="extralg:py-10 medium:py-6 bg-[url(../img/guide-bg.webp)] bg-cover bg-center bg-no-repeat py-20"
+          class="bg-[url(../img/guide-bg.webp)] bg-cover bg-center bg-no-repeat py-20 extralg:py-10 medium:py-6"
         >
           <div class="container">
             <div class="mx-auto flex max-w-[343px] flex-col items-center gap-3">
@@ -674,47 +741,47 @@
               </p>
             </div>
             <div
-              class="extralg:flex extralg:gap-0 small:mt-5 extralg:flex-col extralg:items-center mt-[50px] grid grid-cols-3 gap-5 lg:mt-[30px]"
+              class="mt-[50px] grid grid-cols-3 gap-5 extralg:flex extralg:flex-col extralg:items-center extralg:gap-0 lg:mt-[30px] small:mt-5"
             >
               <div
-                class="guide-card-1 xs:pb-3 extralg:flex extralg:min-h-[160px] guide-card extralg:top-0 relative -top-20 flex max-w-[343px] items-end px-[14px] py-5 text-center"
+                class="guide-card-1 guide-card relative -top-20 flex max-w-[343px] items-end px-[14px] py-5 text-center extralg:top-0 extralg:flex extralg:min-h-[160px] xs:pb-3"
               >
                 <div
-                  class="xs:gap-[6px] relative z-[3] flex flex-col items-center justify-end gap-[10px]"
+                  class="relative z-[3] flex flex-col items-center justify-end gap-[10px] xs:gap-[6px]"
                 >
                   <p
-                    class="guide-card-number extralg:text-[65px] absolute bottom-full left-1/2 -translate-x-1/2 text-[82px] font-black italic leading-none"
+                    class="guide-card-number absolute bottom-full left-1/2 -translate-x-1/2 text-[82px] font-black italic leading-none extralg:text-[65px]"
                   >
                     1
                   </p>
                   <p
-                    class="guide-card-yellow-text xs:text-sm text-[18px] font-black text-[#f6cd46]"
+                    class="guide-card-yellow-text text-[18px] font-black text-[#f6cd46] xs:text-sm"
                   >
                     ЗАРЕГИСТРИРУЙТЕСЬ
                   </p>
-                  <span class="xs:text-sm text-base"
+                  <span class="text-base xs:text-sm"
                     >Нажмите “Получить Бонус” и введите свою почту и
                     пароль.</span
                   >
                 </div>
               </div>
               <div
-                class="guide-card-2 extralg:flex xs:pb-3 extralg:min-h-[180px] guide-card relative max-w-[343px] px-[14px] py-5 pb-3 text-center"
+                class="guide-card-2 guide-card relative max-w-[343px] px-[14px] py-5 pb-3 text-center extralg:flex extralg:min-h-[180px] xs:pb-3"
               >
                 <div
-                  class="xs:gap-[6px] relative z-[3] flex flex-col items-center justify-end gap-[10px]"
+                  class="relative z-[3] flex flex-col items-center justify-end gap-[10px] xs:gap-[6px]"
                 >
                   <p
-                    class="guide-card-number extralg:text-[65px] extralg:bottom-auto xs:-top-2 extralg:-top-8 absolute bottom-full left-1/2 -translate-x-1/2 text-[82px] font-black italic leading-none"
+                    class="guide-card-number absolute bottom-full left-1/2 -translate-x-1/2 text-[82px] font-black italic leading-none extralg:-top-8 extralg:bottom-auto extralg:text-[65px] xs:-top-2"
                   >
                     2
                   </p>
                   <p
-                    class="guide-card-yellow-text xs:text-sm text-[18px] font-black text-[#f6cd46]"
+                    class="guide-card-yellow-text text-[18px] font-black text-[#f6cd46] xs:text-sm"
                   >
                     АКТИВИРУЙТЕ БОНУС
                   </p>
-                  <span class="xs:text-sm text-base"
+                  <span class="text-base xs:text-sm"
                     >В бонусном центре вам уже доступен велком-бонус.</span
                   >
                   <a
@@ -725,22 +792,22 @@
                 </div>
               </div>
               <div
-                class="guide-card xs:pb-3 extralg:flex extralg:min-h-[160px] guide-card-3 extralg:top-0 relative -top-20 flex max-w-[343px] items-end px-[14px] py-5 text-center"
+                class="guide-card guide-card-3 relative -top-20 flex max-w-[343px] items-end px-[14px] py-5 text-center extralg:top-0 extralg:flex extralg:min-h-[160px] xs:pb-3"
               >
                 <div
-                  class="xs:gap-[6px] relative z-[3] flex flex-col items-center justify-end gap-[10px]"
+                  class="relative z-[3] flex flex-col items-center justify-end gap-[10px] xs:gap-[6px]"
                 >
                   <p
-                    class="guide-card-number extralg:text-[65px] absolute bottom-full left-1/2 -translate-x-1/2 text-[82px] font-black italic leading-none"
+                    class="guide-card-number absolute bottom-full left-1/2 -translate-x-1/2 text-[82px] font-black italic leading-none extralg:text-[65px]"
                   >
                     3
                   </p>
                   <p
-                    class="guide-card-yellow-text xs:text-sm text-[18px] font-black text-[#f6cd46]"
+                    class="guide-card-yellow-text text-[18px] font-black text-[#f6cd46] xs:text-sm"
                   >
                     СДЕЛАЙТЕ ДЕПОЗИТ
                   </p>
-                  <span class="xs:text-sm text-base"
+                  <span class="text-base xs:text-sm"
                     >Выберите удобный платежный метод и выполните депозит.</span
                   >
                 </div>
@@ -748,9 +815,9 @@
             </div>
             <div class="mt-5 flex justify-center">
               <button
-                class="green-btn max-w-[310px] cursor-pointer px-8 py-4 font-roboto text-[24px] font-semibold leading-tight"
+                class="green-btn shake-btn max-w-[310px] cursor-pointer px-8 py-4 font-roboto text-[24px] font-semibold leading-tight"
               >
-                ПОЛУЧИТЬ БОНУС 500%
+                <span>ПОЛУЧИТЬ БОНУС 500%</span>
               </button>
             </div>
           </div>

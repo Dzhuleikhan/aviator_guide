@@ -9,11 +9,11 @@ const loaderConnect = document.querySelector(".loader-connection");
 
 gsap.set(loaderLine, { xPercent: -100 });
 
-gsap.to(preloaderIcon, { rotate: 360, duration: 2, ease: "none", repeat: -1 });
+gsap.to(preloaderIcon, { rotate: 360, duration: 1, ease: "none", repeat: -1 });
 
 gsap.to(loaderLine, {
   xPercent: 0,
-  duration: 4,
+  duration: 1.5,
   ease: "none",
   onComplete: () => {
     loaderWrapper.classList.add("hidden");
