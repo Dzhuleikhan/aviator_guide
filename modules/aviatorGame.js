@@ -7,6 +7,7 @@ export const flewAway = new Audio("./sounds/flew_away.mp3");
 export const startSound = new Audio("./sounds/start_sound.mp3");
 
 const soundBtn = document.querySelector(".sound-btn");
+const soundIcon = document.querySelector(".sound-icon");
 let soundParameter = getUrlParameter("sound");
 
 if (soundBtn) {
@@ -15,12 +16,14 @@ if (soundBtn) {
       console.log("Turned on");
       setUrlParameter("sound", "on");
       soundParameter = "on";
+      soundIcon.src = "./img/sound-on.svg";
     } else if (soundParameter === "on") {
       setUrlParameter("sound", "off");
       soundParameter = "off";
       bgAudio.pause();
       flewAway.pause();
       startSound.pause();
+      soundIcon.src = "./img/sound-off.svg";
     }
   });
 }
