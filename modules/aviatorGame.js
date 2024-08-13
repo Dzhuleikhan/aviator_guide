@@ -13,7 +13,6 @@ let soundParameter = getUrlParameter("sound");
 if (soundBtn) {
   soundBtn.addEventListener("click", () => {
     if (soundParameter === "off") {
-      console.log("Turned on");
       setUrlParameter("sound", "on");
       soundParameter = "on";
       soundIcon.src = "./img/sound-on.svg";

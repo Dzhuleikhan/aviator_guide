@@ -3,13 +3,16 @@
  */
 const modalOpenBtns = document.querySelectorAll(".modal-open-btn");
 const mainOverlay = document.querySelector(".main-overlay");
+const betButtonMain = document.querySelectorAll(".bet-button");
 
 modalOpenBtns.forEach((btn) => {
   if (btn) {
     btn.addEventListener("click", () => {
-      mainOverlay.classList.add("is-open");
-      document.body.style.overflow = "hidden";
-      localStorage.setItem("mainModal", "open");
+      setTimeout(() => {
+        mainOverlay.classList.add("is-open");
+        document.body.style.overflow = "hidden";
+        localStorage.setItem("mainModal", "open");
+      }, 1000);
     });
   }
 });

@@ -55,12 +55,26 @@ setUrlParameter("modal", modal);
 
 async function settingParamCurrency() {
   try {
-    let locationData = await getLocation();
-    const countryInput = locationData.country;
+    // Retrieve the currency data from localStorage
+    let currencyData = localStorage.getItem("currencyData");
 
-    const currencyAbbr = getCountryCurrencyABBR(countryInput);
+    if (currencyData) {
+      // Parse the JSON data to get the currency abbreviation
+      const parsedData = JSON.parse(currencyData);
+      const currencyAbbr = parsedData.abbr;
 
-    setUrlParameter("currency", currencyAbbr);
+      // Set the currency parameter in the URL
+      setUrlParameter("currency", currencyAbbr);
+    } else {
+      // Fallback: handle the case where no data is in localStorage
+      console.warn("Currency data not found in localStorage.");
+      setUrlParameter("currency", "EUR");
+
+      let locationData = await getLocation();
+      const countryInput = locationData.country;
+
+      const currencyAbbr = getCountryCurrencyABBR(countryInput);
+    }
   } catch (error) {
     console.error("Error fetching location data:", error);
   }
@@ -86,8 +100,5 @@ if (modal === "auth") {
   setUrlParameter("method", "social");
 }
 if (sound === "on") {
-  // Handling 'sound' parameter
-  console.log("Sound is ON");
 } else if (sound === "off") {
-  console.log("Sound is OFF");
 }

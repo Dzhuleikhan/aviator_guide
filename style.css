@@ -105,6 +105,21 @@ html {
   user-select: none;
 }
 
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #121212 inset;
+  -webkit-text-fill-color: #f0f0f0;
+}
+
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #121212 inset;
+  -webkit-text-fill-color: #f0f0f0;
+}
+
+input:-webkit-autofill:hover {
+  -webkit-box-shadow: 0 0 0 1000px #121212 inset;
+  -webkit-text-fill-color: #f0f0f0;
+}
+
 .scroll-lock {
   overflow: hidden;
 }
@@ -498,40 +513,40 @@ html {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.guide-title {
-  text-shadow: rgb(240, 240, 240) 2px 0px 0px, rgb(240, 240, 240) 1.75517px 0.958851px 0px, rgb(240, 240, 240) 1.0806px 1.68294px 0px, rgb(240, 240, 240) 0.141474px 1.99499px 0px, rgb(240, 240, 240) -0.832294px 1.81859px 0px, rgb(240, 240, 240) -1.60229px 1.19694px 0px, rgb(240, 240, 240) -1.97998px 0.28224px 0px, rgb(240, 240, 240) -1.87291px -0.701566px 0px, rgb(240, 240, 240) -1.30729px -1.5136px 0px, rgb(240, 240, 240) -0.421592px -1.95506px 0px, rgb(240, 240, 240) 0.567324px -1.91785px 0px, rgb(240, 240, 240) 1.41734px -1.41108px 0px, rgb(240, 240, 240) 1.92034px -0.558831px 0px, 0 0 16px #fff;
+.numbers-row::-webkit-scrollbar {
+  display: none;
 }
 
-.guide-card::before {
-  content: '';
-  width: 100%;
-  height: 180px;
-  background: url('../img/guide-card-bg.webp');
-  background-repeat: no-repeat;
-  background-position: 0 100%;
-  background-size: contain;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  z-index: 0;
+.numbers-row {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.guide-card-1::before {
-  background: url('../img/guide-card-bg160.webp');
-  background-repeat: no-repeat;
-  background-position: 0 100%;
-  background-size: contain;
+.bet-tabs button.active {
+  color: #f0f0f0;
+  background-color: #2c2d31;
 }
 
-.guide-card-3::before {
-  background: url('../img/guide-card-bg160.webp');
-  background-repeat: no-repeat;
-  background-position: 0 100%;
-  background-size: contain;
+.bet-tabs button:hover {
+  color: #E30437;
 }
 
-.guide-card p,
-.guide-card span,
-.guide-card a {
-  text-shadow: -4px 4px 8px rgba(0, 0, 0, 0.5);
+.bet-tabs button.active:hover {
+  color: #f0f0f0;
+}
+
+.bet-button.bet-button-cancelled {
+  background: #E30437 !important;
+}
+
+.bet-button .btn-cancel {
+  display: none;
+}
+
+.bet-button.bet-button-cancelled .btn-cancel {
+  display: block;
+}
+
+.bet-button.bet-button-cancelled .btn-normal {
+  display: none;
 }

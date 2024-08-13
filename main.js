@@ -14,3 +14,4 @@ import "./modules/setPayments";
 import "./modules/setCurrency";
 import "./modules/declineModal";
 import "./modules/params";
+import "./modules/gameBet";

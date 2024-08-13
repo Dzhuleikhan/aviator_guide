@@ -1,5 +1,6 @@
 import { getLocation } from "./geoLocation";
 import { countryCurrencyData } from "../public/data";
+import { setUrlParameter } from "./params";
 
 export function getCountryCurrencyABBR(inputCountry) {
   for (const data of countryCurrencyData) {
@@ -38,6 +39,9 @@ function setCurrency(abbr, name, icon) {
     currencyName.textContent = name;
     currencyIcon.src = icon;
   });
+  document.querySelectorAll(".btn-button-currency").forEach((el) => {
+    el.textContent = abbr;
+  });
 }
 
 function loadCurrencyFromLocalStorage() {
@@ -62,7 +66,6 @@ formCurrency.forEach((cur) => {
   if (cur) {
     const currencyDropdownBtn = cur.querySelector(".form-currency-btn");
     const currencyDropdownList = cur.querySelector(".form-currency-dropdown");
-    const currencyInput = cur.querySelector(".currency-input");
 
     function hideDropdown() {
       currencyDropdownBtn.classList.remove("active");
@@ -87,7 +90,6 @@ formCurrency.forEach((cur) => {
         // Taking currency value from item
         let curIcon = item.querySelector(".currency-item-icon").src;
         let curName = item.querySelector(".currency-item-name").textContent;
-        let curSymbol = item.querySelector(".currency-item-symbol").textContent;
         let curAbbr = item.querySelector(".currency-item-abbr").textContent;
 
         // Update all currency inputs on the page
@@ -100,6 +102,8 @@ formCurrency.forEach((cur) => {
           icon: curIcon,
         };
         localStorage.setItem("currencyData", JSON.stringify(currencyData));
+
+        setUrlParameter("currency", currencyData.abbr);
       });
     });
 
