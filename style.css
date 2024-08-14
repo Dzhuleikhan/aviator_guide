@@ -448,6 +448,10 @@ input:-webkit-autofill:hover {
   animation: gradientChange 6s ease-in-out infinite;
 }
 
+.game-inner.colored-green {
+  background: radial-gradient(50% 50% at 50% 50%, rgb(27, 93, 30) 0%, rgb(13, 13, 14) 100%);
+}
+
 @keyframes gradientChange {
   0% {
     background: radial-gradient(50% 50% at 50% 50%, rgb(30, 44, 123) 0%, rgb(13, 13, 14) 100%);
@@ -467,7 +471,7 @@ input:-webkit-autofill:hover {
 }
 
 .win-count-text.lost {
-  color: #ff0000;
+  color: #28A809;
 }
 
 /* HERO SECTION */
@@ -508,6 +512,14 @@ input:-webkit-autofill:hover {
 .green-btn {
   box-shadow: inset 0 4px 4px 0 rgba(255, 255, 255, 0.25);
   background: #28a809;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 24px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.yellow-btn {
+  box-shadow: inset 0 4px 4px 0 rgba(255, 255, 255, 0.25);
+  background: #D17206;
   border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 24px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);

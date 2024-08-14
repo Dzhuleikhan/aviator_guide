@@ -1,17 +1,6 @@
 const betBox = document.querySelectorAll(".bet-box");
 const betButtonMain = document.querySelectorAll(".bet-button");
 
-betButtonMain.forEach((btn) => {
-  if (btn) {
-    btn.addEventListener("click", () => {
-      btn.classList.add("bet-button-cancelled");
-      setTimeout(() => {
-        btn.classList.remove("bet-button-cancelled");
-      }, 1000);
-    });
-  }
-});
-
 betBox.forEach((box) => {
   if (box) {
     const betTabs = box.querySelectorAll(".bet-tabs button");
@@ -38,7 +27,6 @@ betBox.forEach((box) => {
 
     // Bet amounts
     const boxNumbers = box.querySelector(".bet-nums");
-    const betButtonAmount = box.querySelector(".btn-button-number");
     const boxNumbersInput = boxNumbers.querySelector(".bet-number-input");
     const boxNumbersMinus = boxNumbers.querySelector(".btn-minus");
     const boxNumbersPlus = boxNumbers.querySelector(".btn-plus");
@@ -48,12 +36,10 @@ betBox.forEach((box) => {
     boxNumbersMinus.addEventListener("click", () => {
       boxNumbersInputValue -= 0.1;
       boxNumbersInput.value = boxNumbersInputValue.toFixed(2);
-      betButtonAmount.textContent = boxNumbersInputValue.toFixed(2);
     });
     boxNumbersPlus.addEventListener("click", () => {
       boxNumbersInputValue += 0.1;
       boxNumbersInput.value = boxNumbersInputValue.toFixed(2);
-      betButtonAmount.textContent = boxNumbersInputValue.toFixed(2);
     });
 
     const betAmountBtns = boxNumbers.querySelectorAll(
@@ -93,7 +79,6 @@ betBox.forEach((box) => {
 
         // Update the input field and display the amount
         boxNumbersInput.value = boxNumbersInputValue.toFixed(2);
-        betButtonAmount.textContent = boxNumbersInputValue.toFixed(2);
       });
     });
   }

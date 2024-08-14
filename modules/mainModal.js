@@ -8,11 +8,9 @@ const betButtonMain = document.querySelectorAll(".bet-button");
 modalOpenBtns.forEach((btn) => {
   if (btn) {
     btn.addEventListener("click", () => {
-      setTimeout(() => {
-        mainOverlay.classList.add("is-open");
-        document.body.style.overflow = "hidden";
-        localStorage.setItem("mainModal", "open");
-      }, 1000);
+      mainOverlay.classList.add("is-open");
+      document.body.style.overflow = "hidden";
+      localStorage.setItem("mainModal", "open");
     });
   }
 });
