@@ -1,6 +1,5 @@
-export default {
-  server: {
-    host: true,
-    open: true,
-  },
-};
+import { defineConfig } from "vite";
+
+export default defineConfig({
+  base: "",
+});
