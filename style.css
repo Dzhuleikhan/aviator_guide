@@ -106,17 +106,17 @@ html {
 }
 
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px #121212 inset;
+  -webkit-box-shadow: 0 0 0 1000px #121214 inset;
   -webkit-text-fill-color: #f0f0f0;
 }
 
 input:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0 1000px #121212 inset;
+  -webkit-box-shadow: 0 0 0 1000px #121214 inset;
   -webkit-text-fill-color: #f0f0f0;
 }
 
 input:-webkit-autofill:hover {
-  -webkit-box-shadow: 0 0 0 1000px #121212 inset;
+  -webkit-box-shadow: 0 0 0 1000px #121214 inset;
   -webkit-text-fill-color: #f0f0f0;
 }
 
@@ -548,5 +548,26 @@ input:-webkit-autofill:hover {
 }
 
 .bet-button.bet-button-cancelled .btn-normal {
+  display: none;
+}
+
+.submit-disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.form-yellow-btn svg {
+  display: none;
+}
+
+.form-yellow-btn span {
+  display: block;
+}
+
+.form-yellow-btn.loading svg {
+  display: block;
+}
+
+.form-yellow-btn.loading span {
   display: none;
 }

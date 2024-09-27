@@ -15,3 +15,4 @@ import "./modules/setCurrency";
 import "./modules/declineModal";
 import "./modules/params";
 import "./modules/gameBet";
+import "./modules/modalLanguage";
