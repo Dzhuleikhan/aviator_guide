@@ -1,3 +1,5 @@
+import { showCurrentModal, updateUrl } from "./params";
+
 /**
  * Showing main modal window
  */
@@ -43,4 +45,16 @@ modalTabs.addEventListener("click", (e) => {
   btn.classList.add("active");
   let tab = btn.getAttribute("data-tab");
   showActualModal(tab);
+});
+
+const regWithEmailBtns = document.querySelectorAll(".reg-with-email-btn");
+
+regWithEmailBtns.forEach((btn) => {
+  if (btn) {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      showCurrentModal("main");
+      updateUrl("modal", "auth");
+    });
+  }
 });
