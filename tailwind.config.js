@@ -24,6 +24,7 @@ module.exports = {
       },
       colors: {
         white: "#f0f0f0",
+        pageBg: "#0E0F20",
       },
       boxShadow: {
         gameShadow: "0 17px 17px 0 rgba(0, 0, 0, 0.5)",

@@ -140,6 +140,19 @@ function validatePasswordInput() {
 }
 validatePasswordInput();
 
+// Password input placeholder
+const passwordInput = document.querySelectorAll(".password-input");
+
+passwordInput.forEach((input) => {
+  input.addEventListener("input", () => {
+    if (input.value.length >= 1) {
+      input.nextElementSibling.classList.add("hidden");
+    } else {
+      input.nextElementSibling.classList.remove("hidden");
+    }
+  });
+});
+
 // Validate socials input
 
 socialForm.forEach((socialForm) => {
@@ -156,10 +169,16 @@ socialForm.forEach((socialForm) => {
       socialForm.querySelector(".form-submit-btn").disabled = false;
     }
 
+    const btnText1 = submitBtn.querySelector(".btn--1");
+    const btnText2 = submitBtn.querySelector(".btn--2");
+
+    btnText2.style.display = "none";
+
     inputs.forEach((inp) => {
       inp.addEventListener("input", () => {
         submitBtn.disabled = false;
-        submitBtn.textContent = "Sign Up";
+        btnText1.style.display = "none";
+        btnText2.style.display = "block";
       });
     });
   }
@@ -257,6 +276,9 @@ function submitForm(form) {
     const bonus = form.querySelector(".form-bonus");
     const promoCode = form.querySelector(".promocode-input-box");
     const terms = form.querySelector(".checkbox");
+    const formbtn = form.querySelector(".form-yellow-btn");
+
+    let formType = form.getAttribute("data-from-type");
 
     let formData = {};
     let isValid = true;
@@ -358,9 +380,60 @@ function submitForm(form) {
       }
     }
 
+    function disableEmailForm() {
+      currency.classList.add("submit-disabled");
+      email.classList.add("submit-disabled");
+      password.classList.add("submit-disabled");
+      bonus.classList.add("submit-disabled");
+      terms.classList.add("submit-disabled");
+      formbtn.disabled = true;
+      formbtn.classList.add("loading");
+    }
+
+    function disablePhoneForm() {
+      currency.classList.add("submit-disabled");
+      phone.classList.add("submit-disabled");
+      password.classList.add("submit-disabled");
+      bonus.classList.add("submit-disabled");
+      terms.classList.add("submit-disabled");
+      formbtn.disabled = true;
+      formbtn.classList.add("loading");
+    }
+
+    function disableSocialForm() {
+      socials.classList.add("submit-disabled");
+      currency.classList.add("submit-disabled");
+      bonus.classList.add("submit-disabled");
+      terms.classList.add("submit-disabled");
+      formbtn.disabled = true;
+      formbtn.classList.add("loading");
+      formbtn.querySelector(".btn--2").style.display = "none";
+    }
+
+    function disableOneClickForm() {
+      currency.classList.add("submit-disabled");
+      bonus.classList.add("submit-disabled");
+      terms.classList.add("submit-disabled");
+      formbtn.disabled = true;
+      formbtn.classList.add("loading");
+    }
+
+    let lang = localStorage.getItem("preferredLanguage");
+
     if (isValid) {
-      console.log(formData);
-      resetForm(form);
+      if (formType === "email") {
+        disableEmailForm();
+        window.location.href = `https://dev.gbetauth.com/api/register?env=dev&game=softswiss:aviator&type=${formType}&currency=${formData.currency}&email=${formData.email}&password=${formData.password}${formData.bonus === "Without Bonus" ? "" : "&bonus=" + formData.bonus}${formData.promocode ? "&promocode=" + formData.promocode : ""}&lang=${lang}?utm_campaign=100110754_1705949_nodescription&utm_content=100110754&utm_medium=casap&utm_source=aff`;
+      } else if (formType === "phone") {
+        disablePhoneForm();
+        window.location.href = `https://dev.gbetauth.com/api/register?env=dev&game=aviator&type=${formType}&currency=${formData.currency}&phone=${formData.phone}&password=${formData.password}${formData.bonus === "Without Bonus" ? "" : "&bonus=" + formData.bonus}${formData.promocode ? "&promocode=" + formData.promocode : ""}&lang=${lang}?utm_campaign=100110754_1705949_nodescription&utm_content=100110754&utm_medium=casap&utm_source=aff`;
+      } else if (formType === "social") {
+        disableSocialForm();
+        window.location.href = `https://dev.gbetauth.com/api/register?env=dev&game=softswiss:aviator&type=${formData.social}&currency=${formData.currency}${formData.bonus === "Without Bonus" ? "" : "&bonus=" + formData.bonus}${formData.promocode ? "&promocode=" + formData.promocode : ""}&lang=${lang}?utm_campaign=100110754_1705949_nodescription&utm_content=100110754&utm_medium=casap&utm_source=aff`;
+      } else if (formType === "oneclick") {
+        disableOneClickForm();
+        window.location.href = `https://dev.gbetauth.com/api/register?env=dev&game=softswiss:aviator&type=${formType}&currency=${formData.currency}${formData.bonus === "Without Bonus" ? "" : "&bonus=" + formData.bonus}${formData.promocode ? "&promocode=" + formData.promocode : ""}&lang=${lang}?utm_campaign=100110754_1705949_nodescription&utm_content=100110754&utm_medium=casap&utm_source=aff`;
+      }
     }
   });
 }
