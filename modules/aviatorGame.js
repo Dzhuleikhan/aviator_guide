@@ -37,13 +37,22 @@ const gamePlaneImage = document.querySelector(".game-plane");
 const gameStartLoader = document.querySelector(".game-start-loader");
 const winLoaderLine = document.querySelector(".winning-loader-line");
 
-document.addEventListener("click", () => {
+window.addEventListener("click", () => {
   if (soundParameter != "off") {
     bgAudio.play();
     bgAudio.volume = 0.3;
   }
 });
 
+if (gameInner) {
+  gameInner.addEventListener("click", () => {
+    if (
+      !document.querySelector(".form-overlay").classList.contains("is-open")
+    ) {
+      document.querySelector(".form-overlay").classList.add("is-open");
+    }
+  });
+}
 horizontalLoop(".game-dots", {
   repeat: -1,
   paused: false,

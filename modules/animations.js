@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import horizontalLoop from "./marquee";
 /**
  * Hero planes
  */
@@ -68,7 +69,6 @@ mm.add("(min-width: 992px)", () => {
 });
 
 let shakeTl = gsap.timeline({ repeat: -1, repeatDelay: 1.5 });
-let shakeTlRed = gsap.timeline({ repeat: -1, delay: 1, repeatDelay: 1.5 });
 
 shakeTl
   .to(".shake-btn", { scale: 1.08, ease: "none", duration: 0.3 })
@@ -80,18 +80,3 @@ shakeTl
   )
   .to(".shake-btn", { rotate: 0, ease: "none", duration: 0.3 })
   .to(".shake-btn", { scale: 1, ease: "none", duration: 0.3 }, "<");
-
-shakeTlRed
-  .to(".shake-btn-red", {
-    scale: 1.08,
-    ease: "none",
-    duration: 0.3,
-  })
-  .fromTo(
-    ".shake-btn-red",
-    { rotate: -5 },
-    { rotate: 5, ease: "none", duration: 0.1, yoyo: true, repeat: 5 },
-    "<",
-  )
-  .to(".shake-btn-red", { rotate: 0, ease: "none", duration: 0.3 })
-  .to(".shake-btn-red", { scale: 1, ease: "none", duration: 0.3 }, "<");
