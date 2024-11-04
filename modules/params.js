@@ -1,11 +1,8 @@
-import { getLocation } from "./geoLocation";
-import { getCountryCurrencyABBR } from "./setCurrency";
-
 const allModals = document.querySelectorAll(".modal-content");
 const methodTabs = document.querySelectorAll(".modal-tabs button");
 const methodFormContents = document.querySelectorAll(".form-content");
 
-export function showCurrentModal(modalName) {
+function showCurrentModal(modalName, bannerName) {
   allModals.forEach((modal) => {
     modal.classList.remove("active");
   });
@@ -28,8 +25,8 @@ function showMethod(method) {
 // Function to get a URL parameter by name
 export function getUrlParameter(name) {
   name = name.replace(/[\[\]]/g, "\\$&");
-  const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
-  const results = regex.exec(window.location.href);
+  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+    results = regex.exec(window.location.href);
   if (!results) return null;
   if (!results[2]) return "";
   return decodeURIComponent(results[2].replace(/\+/g, " "));
@@ -42,35 +39,33 @@ export function setUrlParameter(key, value) {
   window.history.pushState({ path: url.href }, "", url.href);
 }
 
-// Ensure 'modal' parameter is set to 'auth' by default
-let modal = getUrlParameter("modal") || "auth";
-setUrlParameter("modal", modal);
-
-async function settingParamCurrency() {
-  try {
-    let locationData = await getLocation();
-    const countryInput = locationData.country;
-
-    const currencyAbbr = getCountryCurrencyABBR(countryInput);
-
-    setUrlParameter("currency", currencyAbbr);
-  } catch (error) {
-    console.error("Error fetching location data:", error);
-  }
-}
-settingParamCurrency();
-
-// Ensure 'method' parameter is set
-let method = getUrlParameter("method") || "email";
-setUrlParameter("method", method);
+// Check if 'modal' parameter is present; if not, set it to 'normal'
+const modal = getUrlParameter("modal");
 
 // Ensure 'sound' parameter is set
 let sound = getUrlParameter("sound") || "off";
 setUrlParameter("sound", sound);
 
+if (sound === "on") {
+  // Handling 'sound' parameter
+  console.log("Sound is ON");
+} else if (sound === "off") {
+  console.log("Sound is OFF");
+}
+
+if (!modal) {
+  addUrlParameter("modal", "auth");
+}
+
 if (modal === "auth") {
-  // Handling 'modal' parameter
   showCurrentModal("main");
+
+  // adding method
+  if (!getUrlParameter("method")) {
+    addUrlParameter("method", "email");
+  }
+
+  const method = getUrlParameter("method");
 
   if (method === "email") {
     showMethod("email");
@@ -85,29 +80,53 @@ if (modal === "auth") {
       .querySelector("button[data-tab='oneclick']")
       .classList.remove("hidden");
   }
-} else if (modal === "social") {
-  showCurrentModal("social");
-  setUrlParameter("method", "social");
-}
-if (sound === "on") {
-  // Handling 'sound' parameter
-  console.log("Sound is ON");
-} else if (sound === "off") {
-  console.log("Sound is OFF");
+} else if (modal === "socials") {
+  showCurrentModal("socials");
+} else {
+  showCurrentModal("main");
 }
 
-// Function to update the URL with a new parameter and value
+// Bonus
+// let bonus = getUrlParameter("bonus");
+// let bonusType = getUrlParameter("bonus-type");
+
+// const bonusWrapper = document.querySelectorAll(".form-bonus");
+// const bonusInput = document.querySelectorAll(".bonus-input");
+
+// if (bonus) {
+//   bonusWrapper.forEach((b) => {
+//     b.classList.remove("hidden");
+//   });
+//   if (bonusType) {
+//     bonusWrapper.forEach((b) => {
+//       b.style.pointerEvents = "none";
+//     });
+//   }
+// } else {
+//   bonusWrapper.forEach((b) => {
+//     b.classList.add("hidden");
+//   });
+//   bonusInput.forEach((input) => {
+//     input.value = 0;
+//   });
+// }
+
+// Function to add a parameter to the URL
+function addUrlParameter(key, value) {
+  var url = new URL(window.location.href);
+  url.searchParams.set(key, value);
+  window.history.pushState({ path: url.href }, "", url.href);
+}
+
 export function updateUrl(key, value) {
+  // Create a URL object based on the current window location
+  const url = new URL(window.location);
+
+  // Update or add the specified key-value pair
+  url.searchParams.set(key, value);
+
+  // Update the browser URL without reloading the page
   if (history.pushState) {
-    var newUrl =
-      window.location.protocol +
-      "//" +
-      window.location.host +
-      window.location.pathname +
-      "?" +
-      key +
-      "=" +
-      value;
-    window.history.pushState({ path: newUrl }, "", newUrl);
+    window.history.pushState({ path: url.href }, "", url.href);
   }
 }
