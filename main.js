@@ -9,10 +9,16 @@ import "./modules/preloader";
 import "./modules/language";
 import "./modules/geoLocation";
 import "./modules/mainModal";
-import "./modules/formValidation";
-import "./modules/setPayments";
-import "./modules/setCurrency";
-import "./modules/declineModal";
 import "./modules/params";
 import "./modules/gameBet";
 import "./modules/modalLanguage";
+
+// FORM
+import "./modules/modalCurrency";
+import "./modules/hiddenSelect";
+import "./modules/setBonusValue";
+import "./modules/footerPayments";
+import "./modules/itiTelInput";
+import "./modules/formAuth";
+import "./modules/authDeclineModal";
+import "./modules/formSocials";
