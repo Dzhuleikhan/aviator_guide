@@ -6,13 +6,18 @@ import "./modules/hero";
 import "./modules/marquee";
 import "./modules/aviatorGame";
 import "./modules/preloader";
-import "./modules/language";
-import "./modules/geoLocation";
 import "./modules/mainModal";
-import "./modules/formValidation";
-import "./modules/setPayments";
-import "./modules/setCurrency";
-import "./modules/declineModal";
-import "./modules/params";
 import "./modules/gameBet";
+import "./modules/params";
+
+// FORM
+import "./modules/formAuth";
+import "./modules/authDeclineModal";
+import "./modules/formSocials";
+import "./modules/itiTelInput";
+import "./modules/hiddenSelect";
+import "./modules/footerPayments";
+import "./modules/modalCurrency";
+import "./modules/setBonusValue";
 import "./modules/modalLanguage";
+import "./modules/language";

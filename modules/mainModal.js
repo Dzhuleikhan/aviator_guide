@@ -4,7 +4,7 @@ import { showCurrentModal, updateUrl } from "./params";
  * Showing main modal window
  */
 const modalOpenBtns = document.querySelectorAll(".modal-open-btn");
-const mainOverlay = document.querySelector(".main-overlay");
+const mainOverlay = document.querySelector(".form-overlay");
 const betButtonMain = document.querySelectorAll(".bet-button");
 
 modalOpenBtns.forEach((btn) => {
