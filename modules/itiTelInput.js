@@ -13,7 +13,7 @@ const geoIpLookup = (success, failure) => {
       .then((res) => res.json())
       .then((data) => {
         localStorage.setItem("geoIpData", JSON.stringify(data));
-        success(data.countryCode.toLowerCase());
+        success(data.countryCode);
       })
       .catch(() => {
         failure();
