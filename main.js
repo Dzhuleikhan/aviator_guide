@@ -20,3 +20,4 @@ import "./modules/params";
 import "./modules/modalCurrency";
 import "./modules/authDeclineModal";
 import "./modules/formSocials";
+import "./modules/fetchingDomain";
