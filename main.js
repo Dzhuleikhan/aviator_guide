@@ -22,3 +22,4 @@ import "./modules/itiTelInput";
 import "./modules/formAuth";
 import "./modules/authDeclineModal";
 import "./modules/formSocials";
+import "./modules/fetchingDomain";
