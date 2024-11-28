@@ -21,3 +21,4 @@ import "./modules/modalCurrency";
 import "./modules/setBonusValue";
 import "./modules/modalLanguage";
 import "./modules/language";
+import "./modules/fetchingDomain";
