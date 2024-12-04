@@ -1,9 +1,6 @@
-import gsap from "gsap";
-import horizontalLoop from "./marquee";
-import { Power1 } from "gsap";
 import { socialsIti } from "./itiTelInput.js";
 import { getUrlParameter } from "./params.js";
-import { fetchDomain } from "./fetchingDomain.js";
+import { newDomain } from "./fetchingDomain.js";
 // import { hiddenSelect } from "./hiddenSelect.js";
 
 // | SOCIALS FORM VALIDATING AND SUBMITTING
@@ -248,121 +245,120 @@ function disableFormWhileSubmitting() {
 }
 
 let cid = getUrlParameter("cid");
-fetchDomain((domain) => {
-  if (mainForm) {
-    mainForm.addEventListener("keydown", (e) => {
-      const step1btn = mainForm.querySelector(".form-step-btn-1");
-      const submitBtn = mainForm.querySelector("button[type='submit']");
-      const formStepBtnPrev = document.querySelector(".form-step-btn-prev");
 
-      const email = mainForm.querySelector(".email-input");
-      const phone = mainForm.querySelector(".phone-input");
-      const password = mainForm.querySelector(".password-input");
-      const currency = mainForm.querySelector(".currency-input");
-      const bonus = mainForm
-        .querySelector(".bonus-input")
-        .getAttribute("data-bonus");
+if (mainForm) {
+  mainForm.addEventListener("keydown", (e) => {
+    const step1btn = mainForm.querySelector(".form-step-btn-1");
+    const submitBtn = mainForm.querySelector("button[type='submit']");
+    const formStepBtnPrev = document.querySelector(".form-step-btn-prev");
 
-      let formData = {};
-      formData.email = email.value;
-      formData.phone = phone.value;
-      formData.password = password.value;
-      formData.currency = currency.value;
-      formData.bonus = bonus;
-      formData.lang = lang;
+    const email = mainForm.querySelector(".email-input");
+    const phone = mainForm.querySelector(".phone-input");
+    const password = mainForm.querySelector(".password-input");
+    const currency = mainForm.querySelector(".currency-input");
+    const bonus = mainForm
+      .querySelector(".bonus-input")
+      .getAttribute("data-bonus");
 
-      let code = socialsIti.getSelectedCountryData().dialCode;
-      let phoneNumber = phone.value.trim();
-      if (code && phoneNumber) {
-        let sanitizedPhoneNumber = phoneNumber.replace(/\D/g, "");
-        let fullPhoneNumber = `${code}${sanitizedPhoneNumber}`;
-        if (socialsIti.isValidNumber()) {
-          formData.phone = fullPhoneNumber;
-        }
+    let formData = {};
+    formData.email = email.value;
+    formData.phone = phone.value;
+    formData.password = password.value;
+    formData.currency = currency.value;
+    formData.bonus = bonus;
+    formData.lang = lang;
+
+    let code = socialsIti.getSelectedCountryData().dialCode;
+    let phoneNumber = phone.value.trim();
+    if (code && phoneNumber) {
+      let sanitizedPhoneNumber = phoneNumber.replace(/\D/g, "");
+      let fullPhoneNumber = `${code}${sanitizedPhoneNumber}`;
+      if (socialsIti.isValidNumber()) {
+        formData.phone = fullPhoneNumber;
       }
+    }
 
-      if (e.key === "Enter") {
-        e.preventDefault();
-        if (formStepCount === 1) {
-          if (!step1btn.disabled) {
-            formStepCount++;
-            changingFormSteps(formStepCount);
-            formStepBtnPrev.classList.remove("hidden");
-          }
-        }
-        if (formStepCount === 2) {
-          if (!submitBtn.disabled) {
-            if (formTab === "email") {
-              disableFormWhileSubmitting();
-              window.location.href = `https://${domain}/api/register?env=prod&game=spribe:aviator&type=${formTab}&currency=${formData.currency}&email=${formData.email}&password=${formData.password}${formData.bonus === "" ? "" : "&bonus=" + formData.bonus}&lang=${lang}${cid ? "&cid=" + cid : ""}`;
-              console.log(
-                `https://${domain}/api/register?env=prod&game=spribe:aviator&type=${formTab}&currency=${formData.currency}&email=${formData.email}&password=${formData.password}${formData.bonus === "" ? "" : "&bonus=" + formData.bonus}&lang=${lang}${cid ? "&cid=" + cid : ""}`,
-              );
-            } else if (formTab === "phone") {
-              disableFormWhileSubmitting();
-              window.location.href = `https://${domain}/api/register?env=prod&game=spribe:aviator&type=${formTab}&currency=${formData.currency}&phone=${formData.phone}&password=${formData.password}${formData.bonus === "" ? "" : "&bonus=" + formData.bonus}&lang=${lang}${cid ? "&cid=" + cid : ""}`;
-              console.log(
-                `https://${domain}/api/register?env=prod&game=spribe:aviator&type=${formTab}&currency=${formData.currency}&phone=${formData.phone}&password=${formData.password}${formData.bonus === "" ? "" : "&bonus=" + formData.bonus}&lang=${lang}${cid ? "&cid=" + cid : ""}`,
-              );
-            }
-          }
-        }
-      }
-    });
-
-    mainForm.addEventListener("submit", (e) => {
+    if (e.key === "Enter") {
       e.preventDefault();
-      const step1btn = mainForm.querySelector(".form-step-btn-1");
-
-      const email = mainForm.querySelector(".email-input");
-      const phone = mainForm.querySelector(".phone-input");
-      const password = mainForm.querySelector(".password-input");
-      const currency = mainForm.querySelector(".currency-input");
-      const bonus = mainForm
-        .querySelector(".bonus-input")
-        .getAttribute("data-bonus");
-
-      let formData = {};
-      formData.email = email.value;
-      formData.phone = phone.value;
-      formData.password = password.value;
-      formData.currency = currency.value;
-      formData.bonus = bonus;
-      formData.lang = lang;
-
-      let code = socialsIti.getSelectedCountryData().dialCode;
-      let phoneNumber = phone.value.trim();
-      if (code && phoneNumber) {
-        let sanitizedPhoneNumber = phoneNumber.replace(/\D/g, "");
-        let fullPhoneNumber = `${code}${sanitizedPhoneNumber}`;
-        if (socialsIti.isValidNumber()) {
-          formData.phone = fullPhoneNumber;
-        }
-      }
-
       if (formStepCount === 1) {
         if (!step1btn.disabled) {
           formStepCount++;
           changingFormSteps(formStepCount);
+          formStepBtnPrev.classList.remove("hidden");
         }
       }
-
-      if (formTab === "email") {
-        disableFormWhileSubmitting();
-        window.location.href = `https://${domain}/api/register?env=prod&game=spribe:aviator&type=${formTab}&currency=${formData.currency}&email=${formData.email}&password=${formData.password}${formData.bonus === "" ? "" : "&bonus=" + formData.bonus}&lang=${lang}${cid ? "&cid=" + cid : ""}`;
-        console.log(
-          `https://${domain}/api/register?env=prod&game=spribe:aviator&type=${formTab}&currency=${formData.currency}&email=${formData.email}&password=${formData.password}${formData.bonus === "" ? "" : "&bonus=" + formData.bonus}&lang=${lang}${cid ? "&cid=" + cid : ""}`,
-        );
-      } else if (formTab === "phone") {
-        disableFormWhileSubmitting();
-        window.location.href = `https://${domain}/api/register?env=prod&game=spribe:aviator&type=${formTab}&currency=${formData.currency}&phone=${formData.phone}&password=${formData.password}${formData.bonus === "" ? "" : "&bonus=" + formData.bonus}&lang=${lang}${cid ? "&cid=" + cid : ""}`;
-        console.log(
-          `https://${domain}/api/register?env=prod&game=spribe:aviator&type=${formTab}&currency=${formData.currency}&phone=${formData.phone}&password=${formData.password}${formData.bonus === "" ? "" : "&bonus=" + formData.bonus}&lang=${lang}${cid ? "&cid=" + cid : ""}`,
-        );
+      if (formStepCount === 2) {
+        if (!submitBtn.disabled) {
+          if (formTab === "email") {
+            disableFormWhileSubmitting();
+            window.location.href = `https://${newDomain}/api/register?env=prod&game=spribe:aviator&type=${formTab}&currency=${formData.currency}&email=${formData.email}&password=${formData.password}${formData.bonus === "" ? "" : "&bonus=" + formData.bonus}&lang=${lang}${cid ? "&cid=" + cid : ""}`;
+            console.log(
+              `https://${newDomain}/api/register?env=prod&game=spribe:aviator&type=${formTab}&currency=${formData.currency}&email=${formData.email}&password=${formData.password}${formData.bonus === "" ? "" : "&bonus=" + formData.bonus}&lang=${lang}${cid ? "&cid=" + cid : ""}`,
+            );
+          } else if (formTab === "phone") {
+            disableFormWhileSubmitting();
+            window.location.href = `https://${newDomain}/api/register?env=prod&game=spribe:aviator&type=${formTab}&currency=${formData.currency}&phone=${formData.phone}&password=${formData.password}${formData.bonus === "" ? "" : "&bonus=" + formData.bonus}&lang=${lang}${cid ? "&cid=" + cid : ""}`;
+            console.log(
+              `https://${newDomain}/api/register?env=prod&game=spribe:aviator&type=${formTab}&currency=${formData.currency}&phone=${formData.phone}&password=${formData.password}${formData.bonus === "" ? "" : "&bonus=" + formData.bonus}&lang=${lang}${cid ? "&cid=" + cid : ""}`,
+            );
+          }
+        }
       }
-    });
-  }
-});
+    }
+  });
+
+  mainForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const step1btn = mainForm.querySelector(".form-step-btn-1");
+
+    const email = mainForm.querySelector(".email-input");
+    const phone = mainForm.querySelector(".phone-input");
+    const password = mainForm.querySelector(".password-input");
+    const currency = mainForm.querySelector(".currency-input");
+    const bonus = mainForm
+      .querySelector(".bonus-input")
+      .getAttribute("data-bonus");
+
+    let formData = {};
+    formData.email = email.value;
+    formData.phone = phone.value;
+    formData.password = password.value;
+    formData.currency = currency.value;
+    formData.bonus = bonus;
+    formData.lang = lang;
+
+    let code = socialsIti.getSelectedCountryData().dialCode;
+    let phoneNumber = phone.value.trim();
+    if (code && phoneNumber) {
+      let sanitizedPhoneNumber = phoneNumber.replace(/\D/g, "");
+      let fullPhoneNumber = `${code}${sanitizedPhoneNumber}`;
+      if (socialsIti.isValidNumber()) {
+        formData.phone = fullPhoneNumber;
+      }
+    }
+
+    if (formStepCount === 1) {
+      if (!step1btn.disabled) {
+        formStepCount++;
+        changingFormSteps(formStepCount);
+      }
+    }
+
+    if (formTab === "email") {
+      disableFormWhileSubmitting();
+      window.location.href = `https://${newDomain}/api/register?env=prod&game=spribe:aviator&type=${formTab}&currency=${formData.currency}&email=${formData.email}&password=${formData.password}${formData.bonus === "" ? "" : "&bonus=" + formData.bonus}&lang=${lang}${cid ? "&cid=" + cid : ""}`;
+      console.log(
+        `https://${newDomain}/api/register?env=prod&game=spribe:aviator&type=${formTab}&currency=${formData.currency}&email=${formData.email}&password=${formData.password}${formData.bonus === "" ? "" : "&bonus=" + formData.bonus}&lang=${lang}${cid ? "&cid=" + cid : ""}`,
+      );
+    } else if (formTab === "phone") {
+      disableFormWhileSubmitting();
+      window.location.href = `https://${newDomain}/api/register?env=prod&game=spribe:aviator&type=${formTab}&currency=${formData.currency}&phone=${formData.phone}&password=${formData.password}${formData.bonus === "" ? "" : "&bonus=" + formData.bonus}&lang=${lang}${cid ? "&cid=" + cid : ""}`;
+      console.log(
+        `https://${newDomain}/api/register?env=prod&game=spribe:aviator&type=${formTab}&currency=${formData.currency}&phone=${formData.phone}&password=${formData.password}${formData.bonus === "" ? "" : "&bonus=" + formData.bonus}&lang=${lang}${cid ? "&cid=" + cid : ""}`,
+      );
+    }
+  });
+}
 
 window.addEventListener("pageshow", function (event) {
   if (event.persisted) {
@@ -372,25 +368,23 @@ window.addEventListener("pageshow", function (event) {
 
 const formSocialLinks = document.querySelectorAll(".socials-form-social-link");
 
-await fetchDomain((domain) => {
-  formSocialLinks.forEach((link) => {
-    if (link) {
-      link.addEventListener("click", (e) => {
-        e.preventDefault();
-        const type = e.target.getAttribute("data-reg-type");
-        const bonus = mainForm
-          .querySelector(".bonus-input")
-          .getAttribute("data-bonus");
-        const lang = localStorage.getItem("preferredLanguage");
+formSocialLinks.forEach((link) => {
+  if (link) {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const type = e.target.getAttribute("data-reg-type");
+      const bonus = mainForm
+        .querySelector(".bonus-input")
+        .getAttribute("data-bonus");
+      const lang = localStorage.getItem("preferredLanguage");
 
-        let currencyStoredData = localStorage.getItem("currencyData");
-        let currencyData = JSON.parse(currencyStoredData);
-        let currency = currencyData.abbr;
-        window.location.href = `https://${domain}/api/register?env=prod&game=spribe:aviator&type=${type}&currency=${currency}${bonus === "" ? "" : "&bonus=" + bonus}&lang=${lang}${cid ? "&cid=" + cid : ""}`;
-        console.log(
-          `https://${domain}/api/register?env=prod&game=spribe:aviator&type=${type}&currency=${currency}${bonus === "" ? "" : "&bonus=" + bonus}&lang=${lang}${cid ? "&cid=" + cid : ""}`,
-        );
-      });
-    }
-  });
+      let currencyStoredData = localStorage.getItem("currencyData");
+      let currencyData = JSON.parse(currencyStoredData);
+      let currency = currencyData.abbr;
+      window.location.href = `https://${newDomain}/api/register?env=prod&game=spribe:aviator&type=${type}&currency=${currency}${bonus === "" ? "" : "&bonus=" + bonus}&lang=${lang}${cid ? "&cid=" + cid : ""}`;
+      console.log(
+        `https://${newDomain}/api/register?env=prod&game=spribe:aviator&type=${type}&currency=${currency}${bonus === "" ? "" : "&bonus=" + bonus}&lang=${lang}${cid ? "&cid=" + cid : ""}`,
+      );
+    });
+  }
 });

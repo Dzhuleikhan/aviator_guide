@@ -1,6 +1,6 @@
 export const translations = {
   en: {
-    mainButton: "Получить бонус <br /> 1100%",
+    mainButton: "Получить бонус <br /> 200%",
     waitingForNextRound: "WAITING FOR NEXT ROUND",
     flewAway: "flew away",
     bonusTextUnderPercent: "BONUS ON YOUR FIRST TOP-UP",
@@ -15,7 +15,7 @@ export const translations = {
     playAviator: "Играть в aviator",
   },
   es: {
-    mainButton: "Получить бонус <br /> 1100%",
+    mainButton: "Получить бонус <br /> 200%",
     waitingForNextRound: "WAITING FOR NEXT ROUND",
     flewAway: "flew away",
     bonusTextUnderPercent: "BONUS ON YOUR FIRST TOP-UP",
@@ -30,7 +30,7 @@ export const translations = {
     playAviator: "Играть в aviator",
   },
   fr: {
-    mainButton: "Получить бонус <br /> 1100%",
+    mainButton: "Получить бонус <br /> 200%",
     waitingForNextRound: "WAITING FOR NEXT ROUND",
     flewAway: "flew away",
     bonusTextUnderPercent: "BONUS ON YOUR FIRST TOP-UP",
@@ -60,7 +60,7 @@ export const translations = {
     playAviator: "aviator oyna",
   },
   uz: {
-    mainButton: "Получить бонус <br /> 1100%",
+    mainButton: "Получить бонус <br /> 200%",
     waitingForNextRound: "WAITING FOR NEXT ROUND",
     flewAway: "flew away",
     bonusTextUnderPercent: "BONUS ON YOUR FIRST TOP-UP",
@@ -75,7 +75,7 @@ export const translations = {
     playAviator: "Играть в aviator",
   },
   ua: {
-    mainButton: "Получить бонус <br /> 1100%",
+    mainButton: "Получить бонус <br /> 200%",
     waitingForNextRound: "WAITING FOR NEXT ROUND",
     flewAway: "flew away",
     bonusTextUnderPercent: "BONUS ON YOUR FIRST TOP-UP",
@@ -90,7 +90,7 @@ export const translations = {
     playAviator: "Играть в aviator",
   },
   ru: {
-    mainButton: "Получить бонус <br /> 1100%",
+    mainButton: "Получить бонус <br /> 200%",
     waitingForNextRound: "WAITING FOR NEXT ROUND",
     flewAway: "flew away",
     bonusTextUnderPercent: "BONUS ON YOUR FIRST TOP-UP",
@@ -105,7 +105,7 @@ export const translations = {
     playAviator: "Играть в aviator",
   },
   bd: {
-    mainButton: "Получить бонус <br /> 1100%",
+    mainButton: "Получить бонус <br /> 200%",
     waitingForNextRound: "WAITING FOR NEXT ROUND",
     flewAway: "flew away",
     bonusTextUnderPercent: "BONUS ON YOUR FIRST TOP-UP",
@@ -120,7 +120,7 @@ export const translations = {
     playAviator: "Играть в aviator",
   },
   tr: {
-    mainButton: "Получить бонус <br /> 1100%",
+    mainButton: "Получить бонус <br /> 200%",
     waitingForNextRound: "WAITING FOR NEXT ROUND",
     flewAway: "flew away",
     bonusTextUnderPercent: "BONUS ON YOUR FIRST TOP-UP",
@@ -135,7 +135,7 @@ export const translations = {
     playAviator: "Играть в aviator",
   },
   id: {
-    mainButton: "Получить бонус <br /> 1100%",
+    mainButton: "Получить бонус <br /> 200%",
     waitingForNextRound: "WAITING FOR NEXT ROUND",
     flewAway: "flew away",
     bonusTextUnderPercent: "BONUS ON YOUR FIRST TOP-UP",
@@ -150,7 +150,7 @@ export const translations = {
     playAviator: "Играть в aviator",
   },
   pt: {
-    mainButton: "Получить бонус <br /> 1100%",
+    mainButton: "Получить бонус <br /> 200%",
     waitingForNextRound: "WAITING FOR NEXT ROUND",
     flewAway: "flew away",
     bonusTextUnderPercent: "BONUS ON YOUR FIRST TOP-UP",
@@ -165,7 +165,7 @@ export const translations = {
     playAviator: "Играть в aviator",
   },
   de: {
-    mainButton: "Получить бонус <br /> 1100%",
+    mainButton: "Получить бонус <br /> 200%",
     waitingForNextRound: "WAITING FOR NEXT ROUND",
     flewAway: "flew away",
     bonusTextUnderPercent: "BONUS ON YOUR FIRST TOP-UP",
@@ -180,7 +180,7 @@ export const translations = {
     playAviator: "Играть в aviator",
   },
   cn: {
-    mainButton: "Получить бонус <br /> 1100%",
+    mainButton: "Получить бонус <br /> 200%",
     waitingForNextRound: "WAITING FOR NEXT ROUND",
     flewAway: "flew away",
     bonusTextUnderPercent: "BONUS ON YOUR FIRST TOP-UP",
@@ -195,7 +195,7 @@ export const translations = {
     playAviator: "Играть в aviator",
   },
   kz: {
-    mainButton: "Получить бонус <br /> 1100%",
+    mainButton: "Получить бонус <br /> 200%",
     waitingForNextRound: "WAITING FOR NEXT ROUND",
     flewAway: "flew away",
     bonusTextUnderPercent: "BONUS ON YOUR FIRST TOP-UP",
@@ -210,7 +210,7 @@ export const translations = {
     playAviator: "Играть в aviator",
   },
   kg: {
-    mainButton: "Получить бонус <br /> 1100%",
+    mainButton: "Получить бонус <br /> 200%",
     waitingForNextRound: "WAITING FOR NEXT ROUND",
     flewAway: "flew away",
     bonusTextUnderPercent: "BONUS ON YOUR FIRST TOP-UP",
