@@ -132,7 +132,7 @@ gameTl
   .to(
     ".win-count",
     {
-      textContent: 500,
+      textContent: 200,
       duration: 4,
       ease: "none",
       onUpdate: function () {

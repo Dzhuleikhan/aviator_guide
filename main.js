@@ -18,7 +18,7 @@ import "./modules/itiTelInput";
 import "./modules/hiddenSelect";
 import "./modules/footerPayments";
 import "./modules/modalCurrency";
-import "./modules/setBonusValue";
 import "./modules/modalLanguage";
 import "./modules/language";
 import "./modules/fetchingDomain";
+import "./modules/termsModal";
