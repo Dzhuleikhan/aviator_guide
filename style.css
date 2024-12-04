@@ -1,78 +1,78 @@
 @font-face {
-  font-family: 'Raleway';
-  src: url('../fonts/Raleway-Black.woff2') format('woff2');
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-Black.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Raleway';
-  src: url('../fonts/Raleway-Regular.woff2') format('woff2');
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Raleway';
-  src: url('../fonts/Raleway-ExtraBoldItalic.woff2') format('woff2');
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-ExtraBoldItalic.woff2") format("woff2");
   font-weight: bold;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Raleway';
-  src: url('../fonts/Raleway-ExtraBold.woff2') format('woff2');
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-ExtraBold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Raleway';
-  src: url('../fonts/Raleway-BlackItalic.woff2') format('woff2');
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-BlackItalic.woff2") format("woff2");
   font-weight: 900;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto';
-  src: url('../fonts/Roboto-Bold.woff2') format('woff2');
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Raleway';
-  src: url('../fonts/Raleway-SemiBold.woff2') format('woff2');
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto';
-  src: url('../fonts/Roboto-Black.woff2') format('woff2');
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Black.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto Condensed';
-  src: url('../fonts/RobotoCondensed-Bold.woff2') format('woff2');
+  font-family: "Roboto Condensed";
+  src: url("../fonts/RobotoCondensed-Bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto';
-  src: url('../fonts/Roboto-Light.woff2') format('woff2');
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -84,13 +84,13 @@
 
 @layer base {
   html {
-    @apply text-white font-raleway
+    @apply font-raleway text-white;
   }
 }
 
 @layer components {
   .container {
-    @apply max-w-[1110px]
+    @apply max-w-[1110px];
   }
 }
 
@@ -104,7 +104,6 @@ html {
   font-feature-settings: "lnum" 1;
   user-select: none;
 }
-
 
 .scroll-lock {
   overflow: hidden;
@@ -132,25 +131,45 @@ html {
 /* GAME COMPONENT */
 
 .game-inner.colored {
-  background: radial-gradient(50% 50% at 50% 50%, rgb(30, 44, 123) 0%, rgb(13, 13, 14) 100%);
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgb(30, 44, 123) 0%,
+    rgb(13, 13, 14) 100%
+  );
   animation: gradientChange 6s ease-in-out infinite;
 }
 
 @keyframes gradientChange {
   0% {
-    background: radial-gradient(50% 50% at 50% 50%, rgb(30, 44, 123) 0%, rgb(13, 13, 14) 100%);
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgb(30, 44, 123) 0%,
+      rgb(13, 13, 14) 100%
+    );
   }
 
   33% {
-    background: radial-gradient(50% 50% at 50% 50%, rgb(87, 27, 93) 0%, rgb(13, 13, 14) 100%);
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgb(87, 27, 93) 0%,
+      rgb(13, 13, 14) 100%
+    );
   }
 
   66% {
-    background: radial-gradient(50% 50% at 50% 50%, rgb(27, 45, 93) 0%, rgb(13, 13, 14) 100%);
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgb(27, 45, 93) 0%,
+      rgb(13, 13, 14) 100%
+    );
   }
 
   100% {
-    background: radial-gradient(50% 50% at 50% 50%, rgb(27, 93, 30) 0%, rgb(13, 13, 14) 100%);
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgb(27, 93, 30) 0%,
+      rgb(13, 13, 14) 100%
+    );
   }
 }
 
@@ -173,14 +192,15 @@ html {
 }
 
 .hero-bonus-big::before {
-  content: '+500%';
+  content: "+500%";
   /* Replace this with your actual text */
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
   color: #f0f0f0;
-  text-shadow: 2px 0px 0px #ff0000,
+  text-shadow:
+    2px 0px 0px #ff0000,
     2px 2px 0px #ff0000,
     -2px 2px 0px #ff0000,
     -2px 2px 0px #ff0000,
@@ -202,14 +222,28 @@ html {
 }
 
 .guide-title {
-  text-shadow: rgb(240, 240, 240) 2px 0px 0px, rgb(240, 240, 240) 1.75517px 0.958851px 0px, rgb(240, 240, 240) 1.0806px 1.68294px 0px, rgb(240, 240, 240) 0.141474px 1.99499px 0px, rgb(240, 240, 240) -0.832294px 1.81859px 0px, rgb(240, 240, 240) -1.60229px 1.19694px 0px, rgb(240, 240, 240) -1.97998px 0.28224px 0px, rgb(240, 240, 240) -1.87291px -0.701566px 0px, rgb(240, 240, 240) -1.30729px -1.5136px 0px, rgb(240, 240, 240) -0.421592px -1.95506px 0px, rgb(240, 240, 240) 0.567324px -1.91785px 0px, rgb(240, 240, 240) 1.41734px -1.41108px 0px, rgb(240, 240, 240) 1.92034px -0.558831px 0px, 0 0 16px #fff;
+  text-shadow:
+    rgb(240, 240, 240) 2px 0px 0px,
+    rgb(240, 240, 240) 1.75517px 0.958851px 0px,
+    rgb(240, 240, 240) 1.0806px 1.68294px 0px,
+    rgb(240, 240, 240) 0.141474px 1.99499px 0px,
+    rgb(240, 240, 240) -0.832294px 1.81859px 0px,
+    rgb(240, 240, 240) -1.60229px 1.19694px 0px,
+    rgb(240, 240, 240) -1.97998px 0.28224px 0px,
+    rgb(240, 240, 240) -1.87291px -0.701566px 0px,
+    rgb(240, 240, 240) -1.30729px -1.5136px 0px,
+    rgb(240, 240, 240) -0.421592px -1.95506px 0px,
+    rgb(240, 240, 240) 0.567324px -1.91785px 0px,
+    rgb(240, 240, 240) 1.41734px -1.41108px 0px,
+    rgb(240, 240, 240) 1.92034px -0.558831px 0px,
+    0 0 16px #fff;
 }
 
 .guide-card::before {
-  content: '';
+  content: "";
   width: 100%;
   height: 180px;
-  background: url('../img/guide-card-bg.webp');
+  background: url("../img/guide-card-bg.webp");
   background-repeat: no-repeat;
   background-position: 0 100%;
   background-size: contain;
@@ -220,14 +254,14 @@ html {
 }
 
 .guide-card-1::before {
-  background: url('../img/guide-card-bg160.webp');
+  background: url("../img/guide-card-bg160.webp");
   background-repeat: no-repeat;
   background-position: 0 100%;
   background-size: contain;
 }
 
 .guide-card-3::before {
-  background: url('../img/guide-card-bg160.webp');
+  background: url("../img/guide-card-bg160.webp");
   background-repeat: no-repeat;
   background-position: 0 100%;
   background-size: contain;
@@ -239,12 +273,9 @@ html {
   text-shadow: -4px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-
-
 .form-overlay.is-open {
   display: grid;
 }
-
 
 /* | AUTH FORM STYLES */
 
@@ -262,7 +293,6 @@ html {
   -webkit-box-shadow: 0 0 0 1000px #121213 inset;
   -webkit-text-fill-color: #f0f0f0;
 }
-
 
 .auth-form .iti {
   width: 100%;
@@ -314,41 +344,41 @@ html {
 }
 
 .modal-tabs button.active {
-  border-color: #28A809;
-  color: #28A809;
+  border-color: #28a809;
+  color: #28a809;
 }
 
-.modal-tabs button[data-tab='email'].active svg {
-  stroke: #28A809;
+.modal-tabs button[data-tab="email"].active svg {
+  stroke: #28a809;
 }
 
-.modal-tabs button[data-tab='phone'].active svg {
-  stroke: #28A809;
+.modal-tabs button[data-tab="phone"].active svg {
+  stroke: #28a809;
 }
 
-.modal-tabs button[data-tab='social'].active svg {
-  fill: #28A809;
+.modal-tabs button[data-tab="social"].active svg {
+  fill: #28a809;
 }
 
-.modal-tabs button[data-tab='oneclick'].active svg {
-  stroke: #28A809;
+.modal-tabs button[data-tab="oneclick"].active svg {
+  stroke: #28a809;
 }
 
 .checkbox:hover .checkbox-content::before {
-  background-image: url('../img/unckecked.svg');
+  background-image: url("../img/unckecked.svg");
   background-repeat: no-repeat;
   background-size: contain;
 }
 
-.checkbox-input:checked+.checkbox-content::before {
-  background: url('../img/checked.svg'), #28A809;
+.checkbox-input:checked + .checkbox-content::before {
+  background: url("../img/checked.svg"), #28a809;
   background-repeat: no-repeat;
   background-size: contain;
   border: none;
 }
 
 .checkbox-content::before {
-  content: '';
+  content: "";
   width: 20px;
   height: 20px;
   border-radius: 4px;
@@ -367,7 +397,7 @@ html {
 }
 
 .socials-item::before {
-  content: '';
+  content: "";
   width: 30px;
   height: 8px;
   border-radius: 50%;
@@ -378,20 +408,20 @@ html {
   filter: blur(4px);
 }
 
-.social-variant-input:checked+.socials-item {
+.social-variant-input:checked + .socials-item {
   background-color: #fff;
 }
 
-.social-variant-input:checked+.socials-item svg {
+.social-variant-input:checked + .socials-item svg {
   fill: #0e0f20;
 }
 
 .valid {
-  border-color: #4ED937;
+  border-color: #4ed937;
 }
 
 .non-valid {
-  border-color: #FF5530;
+  border-color: #ff5530;
 }
 
 .auth-form-email.valid .validation-cta .correct {
@@ -420,7 +450,7 @@ html {
 }
 
 .error-alert::before {
-  content: '';
+  content: "";
   width: 0;
   height: 0;
   border-left: 8px solid transparent;
@@ -433,12 +463,12 @@ html {
   transform: translateX(-50%);
 }
 
-.terms-input.non-valid+span::before {
-  border-color: #FF5530;
+.terms-input.non-valid + span::before {
+  border-color: #ff5530;
 }
 
 .auth-form-phone.valid {
-  border: 1px solid #4ED937;
+  border: 1px solid #4ed937;
   border-radius: 8px;
 }
 
@@ -459,12 +489,12 @@ html {
 }
 
 .auth-form-phone.non-valid {
-  border: 1px solid #FF5530;
+  border: 1px solid #ff5530;
   border-radius: 8px;
 }
 
 .modal-tabs button::before {
-  content: '';
+  content: "";
   width: 50px;
   height: 30px;
   border-radius: 50px;
@@ -481,11 +511,11 @@ html {
 }
 
 .modal-tabs button.active::after {
-  content: '';
+  content: "";
   width: 50px;
   height: 30px;
   border-radius: 50px;
-  background: #F4FD2B50;
+  background: #f4fd2b50;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -504,7 +534,7 @@ html {
 }
 
 .modal-tabs button.active:hover::before {
-  background: #F4FD2B50;
+  background: #f4fd2b50;
 }
 
 .decline-title {
@@ -524,7 +554,12 @@ html {
 }
 
 .next-deposit {
-  background: url('../img/next-deposit-bg.webp'), linear-gradient(180deg, rgba(20, 130, 255, 0.4) 0%, rgba(20, 130, 255, 0.4) 100%);
+  background: url("../img/next-deposit-bg.webp"),
+    linear-gradient(
+      180deg,
+      rgba(20, 130, 255, 0.4) 0%,
+      rgba(20, 130, 255, 0.4) 100%
+    );
   background-repeat: no-repeat;
   background-position: 100% 0;
   background-size: contain;
@@ -535,7 +570,12 @@ html {
 }
 
 .your-winning {
-  background: url('../img/your-winning-bg.webp'), linear-gradient(180deg, rgba(78, 217, 55, 0.4) 0%, rgba(24, 94, 13, 0.4) 100%);
+  background: url("../img/your-winning-bg.webp"),
+    linear-gradient(
+      180deg,
+      rgba(78, 217, 55, 0.4) 0%,
+      rgba(24, 94, 13, 0.4) 100%
+    );
   background-repeat: no-repeat;
   background-position: 100% 0;
   background-size: contain;
@@ -550,7 +590,7 @@ html {
 }
 
 .form-yellow-btn::before {
-  content: '';
+  content: "";
   width: 100%;
   height: 100%;
   background-color: #f0f0f020;
@@ -568,7 +608,7 @@ html {
   visibility: visible;
 }
 
-.social-variant-input:disabled+span {
+.social-variant-input:disabled + span {
   opacity: 0.4;
 }
 
@@ -652,11 +692,11 @@ html {
 }
 
 .socials-form .iti__dial-code {
-  color: #755EEB !important;
+  color: #755eeb !important;
 }
 
 .socials-form .iti__selected-dial-code {
-  color: #755EEB !important;
+  color: #755eeb !important;
 }
 
 .socials-form .iti .phone-input {
@@ -669,12 +709,11 @@ html {
   height: 22px !important;
 }
 
-
 .socials-form-type-btn::before {
-  content: '';
+  content: "";
   width: 100%;
   height: 3px;
-  background: #FAD303;
+  background: #fad303;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -686,11 +725,11 @@ html {
 }
 
 .socials-form-type-btn.active span {
-  color: #FAD303;
+  color: #fad303;
 }
 
 .socials-form-type-btn.active svg {
-  stroke: #FAD303;
+  stroke: #fad303;
 }
 
 .socials-form-group-email label {
@@ -698,8 +737,8 @@ html {
 }
 
 /* .form-group-email input:focus, */
-.socials-form-group-email input:focus+label,
-.socials-form-group-email input:not(:placeholder-shown)+label {
+.socials-form-group-email input:focus + label,
+.socials-form-group-email input:not(:placeholder-shown) + label {
   font-size: 12px;
   transform: translateY(-14px);
 }
@@ -721,11 +760,11 @@ html {
 }
 
 .socials-form-group.not-valid {
-  border: 2px solid #FF5530;
+  border: 2px solid #ff5530;
 }
 
 .socials-form-group.not-valid input {
-  color: #FF5530;
+  color: #ff5530;
 }
 
 .socials-form-group.not-valid .tooltip {
@@ -737,11 +776,11 @@ html {
 }
 
 .socials-form-group-password.not-valid {
-  border: 2px solid #FF5530;
+  border: 2px solid #ff5530;
 }
 
 .socials-form-group-password.not-valid input {
-  color: #FF5530;
+  color: #ff5530;
 }
 
 .socials-form-group-password.not-valid .tooltip {
@@ -750,21 +789,21 @@ html {
 
 .socials-form input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px #f0f0f0 inset;
-  -webkit-text-fill-color: #755EEB;
+  -webkit-text-fill-color: #755eeb;
 }
 
 .socials-form input:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0 1000px #f0f0f0 inset;
-  -webkit-text-fill-color: #755EEB;
+  -webkit-text-fill-color: #755eeb;
 }
 
 .socials-form input:-webkit-autofill:hover {
   -webkit-box-shadow: 0 0 0 1000px #f0f0f0 inset;
-  -webkit-text-fill-color: #755EEB;
+  -webkit-text-fill-color: #755eeb;
 }
 
 .checkbox .checkbox-content::before {
-  content: '';
+  content: "";
   width: 20px;
   height: 20px;
   border-radius: 4px;
@@ -775,8 +814,8 @@ html {
   top: 0;
 }
 
-.checkbox .checkbox-input:checked+.checkbox-content::before {
-  background: url('../img/checked.svg') #28A809;
+.checkbox .checkbox-input:checked + .checkbox-content::before {
+  background: url("../img/checked.svg") #28a809;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -786,7 +825,7 @@ html {
 }
 
 .tooltip::before {
-  content: '';
+  content: "";
   width: 0;
   height: 0;
   border-left: 12px solid transparent;
@@ -841,7 +880,7 @@ html {
 }
 
 .form-bonus-btn.bonus-applied {
-  border-color: #4ED937;
+  border-color: #4ed937;
 }
 
 .form-bonus-btn.bonus-applied .bonus-btn-check {
@@ -856,4 +895,12 @@ html {
   .main-bonus-name {
     font-size: 12px !important;
   }
+}
+
+.terms-modal.is-open {
+  display: grid;
+}
+
+.scroll-lock {
+  overflow: hidden;
 }

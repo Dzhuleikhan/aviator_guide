@@ -1,4 +1,6 @@
 import { modalTranslations } from "../public/modalTranslations";
+import { setPaymentMethods } from "./footerPayments";
+import { paymentCountries } from "../public/payments";
 import { getLocation } from "./geoLocation";
 
 function updateContent(lang) {
@@ -35,12 +37,11 @@ export function changeModalLanguage(lang) {
 async function setModalLanguage() {
   try {
     const location = await getLocation();
-    const locationCode = location.countryCode.toLowerCase();
-    changeLanguage(locationCode);
+    changeLanguage(location.countryCode);
+    setPaymentMethods(paymentCountries, location.countryCode.toLowerCase());
   } catch (error) {
     console.log(error);
     changeLanguage("en");
   }
 }
-
 setModalLanguage();
