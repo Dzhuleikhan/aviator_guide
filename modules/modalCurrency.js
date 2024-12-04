@@ -48,9 +48,6 @@ function setCurrency(abbr, name, icon) {
         item.classList.add("active");
       }
     });
-    document.querySelectorAll(".btn-button-currency").forEach((el) => {
-      el.textContent = abbr;
-    });
   });
 }
 
@@ -88,11 +85,10 @@ function loadCurrencyFromLocalStorage() {
   }
 }
 
-// Call this function when the page loads
-document.addEventListener("DOMContentLoaded", loadCurrencyFromLocalStorage);
+loadCurrencyFromLocalStorage();
 
 /**
- *  Currency dropdown
+ *  Currency dropdownxw
  */
 
 const formCurrency = document.querySelectorAll(".form-currency");
