@@ -28,4 +28,23 @@ export function setPaymentMethods(countries, location) {
       list.appendChild(item);
     });
   });
+  const paymentsListMarquee = document.querySelector(".payments-list-marquee");
+  paymentsListMarquee.innerHTML = "";
+
+  // Assume `country.payments` contains the 4 image URLs
+  const images = country.payments;
+  const totalElements = 30;
+
+  for (let i = 0; i < totalElements; i++) {
+    let item = document.createElement("div");
+    let itemIcon = document.createElement("img");
+    item.appendChild(itemIcon);
+
+    // Use the modulo operator to loop through the 4 images
+    const imageIndex = i % images.length;
+    itemIcon.setAttribute("src", images[imageIndex]);
+    itemIcon.setAttribute("alt", "Payment icon");
+
+    paymentsListMarquee.appendChild(item);
+  }
 }
