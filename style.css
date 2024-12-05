@@ -789,3 +789,25 @@ input:-webkit-autofill:hover {
 .scroll-lock {
   overflow: hidden;
 }
+
+.payments-list-modal div {
+  max-width: 60px;
+}
+
+@media (max-width: 500px) {
+  .modal-tabs {
+    display: flex;
+  }
+
+  .modal-tabs button {
+    font-size: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    width: 33%;
+  }
+
+  .modal-tabs button svg {
+    max-width: 20px;
+    height: auto;
+  }
+}
