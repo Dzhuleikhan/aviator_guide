@@ -69,7 +69,6 @@ function updateButtonText(lang) {
     id: "Bahasa Indonesia",
     pt: "Português",
     de: "Deutsch",
-    cn: "中文",
     kz: "Қазақ",
     kg: "Кыргыз тили",
   };
@@ -127,7 +126,6 @@ async function determineLanguage() {
     ID: "id",
     PT: "pt",
     DE: "de",
-    CN: "cn",
     KZ: "kz",
     KG: "kg",
     // Add more country codes and their corresponding languages as needed
