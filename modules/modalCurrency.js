@@ -54,8 +54,10 @@ function setCurrency(abbr, name, icon) {
 async function settingModalCurrency() {
   try {
     let locationData = await getLocation();
-    const countryInput = locationData.countryCode;
-    console.log(countryInput);
+    let countryInput = locationData.countryCode;
+    if (countryInput === "RU") {
+      countryInput = "US";
+    }
 
     const currencyAbbr = getCountryCurrencyABBR(countryInput);
     const currencyFullName = getCountryCurrencyFullName(countryInput);
