@@ -562,7 +562,7 @@ export const translations = {
                   - Xidmətdən istifadə nəticəsində əldə etdiyiniz kriptovalyutalara tətbiq oluna bilən bütün vergilərə görə məsuliyyət daşıyırsınız.`,
   },
   uz: {
-    mainButton: "<br/> 200% + 25FS bonusni olish ",
+    mainButton: "200% + 25FS <br/> bonusni olish ",
     waitingForNextRound: "keyingi turni kuting",
     flewAway: "uchib ketti",
     bonusTextUnderPercent: "birinchi pogona uchun bonus",
