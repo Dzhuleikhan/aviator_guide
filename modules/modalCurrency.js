@@ -37,6 +37,11 @@ function setCurrency(abbr, name, icon) {
     input.value = abbr;
     currencyName.textContent = name;
     currencyIcon.src = icon;
+    const buttonCurrency = document
+      .querySelectorAll(".btn-button-currency")
+      .forEach((btn) => {
+        btn.textContent = abbr;
+      });
 
     const currencyListItem = cur.querySelectorAll(
       ".form-currency-dropdown ul li",
