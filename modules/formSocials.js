@@ -251,6 +251,7 @@ if (mainForm) {
     const step1btn = mainForm.querySelector(".form-step-btn-1");
     const submitBtn = mainForm.querySelector("button[type='submit']");
     const formStepBtnPrev = document.querySelector(".form-step-btn-prev");
+    const lang = localStorage.getItem("preferredLanguage");
 
     const email = mainForm.querySelector(".email-input");
     const phone = mainForm.querySelector(".phone-input");
@@ -310,6 +311,7 @@ if (mainForm) {
   mainForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const step1btn = mainForm.querySelector(".form-step-btn-1");
+    const lang = localStorage.getItem("preferredLanguage");
 
     const email = mainForm.querySelector(".email-input");
     const phone = mainForm.querySelector(".phone-input");
