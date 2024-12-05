@@ -251,6 +251,7 @@ if (mainForm) {
     const step1btn = mainForm.querySelector(".form-step-btn-1");
     const submitBtn = mainForm.querySelector("button[type='submit']");
     const formStepBtnPrev = document.querySelector(".form-step-btn-prev");
+    const lang = localStorage.getItem("preferredLanguage");
 
     const email = mainForm.querySelector(".email-input");
     const phone = mainForm.querySelector(".phone-input");
@@ -310,6 +311,7 @@ if (mainForm) {
   mainForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const step1btn = mainForm.querySelector(".form-step-btn-1");
+    const lang = localStorage.getItem("preferredLanguage");
 
     const email = mainForm.querySelector(".email-input");
     const phone = mainForm.querySelector(".phone-input");
@@ -346,13 +348,13 @@ if (mainForm) {
 
     if (formTab === "email") {
       disableFormWhileSubmitting();
-      window.location.href = `https://${newDomain}/api/register?env=prod&game=spribe:aviator&type=${formTab}&currency=${formData.currency}&email=${formData.email}&password=${formData.password}${formData.bonus === "" ? "" : "&bonus=" + formData.bonus}&lang=${lang}${cid ? "&cid=" + cid : ""}`;
+      window.location.href = `https://${newDomain}/api/register?env=prod&game=spribe:aviator&type=${formTab}&currency=${formData.currency}&email=${formData.email}&password=${formData.password}${formData.bonus === "" ? "" : "&bonus=" + formData.bonus}&lang=${formData.lang}${cid ? "&cid=" + cid : ""}`;
       console.log(
         `https://${newDomain}/api/register?env=prod&game=spribe:aviator&type=${formTab}&currency=${formData.currency}&email=${formData.email}&password=${formData.password}${formData.bonus === "" ? "" : "&bonus=" + formData.bonus}&lang=${lang}${cid ? "&cid=" + cid : ""}`,
       );
     } else if (formTab === "phone") {
       disableFormWhileSubmitting();
-      window.location.href = `https://${newDomain}/api/register?env=prod&game=spribe:aviator&type=${formTab}&currency=${formData.currency}&phone=${formData.phone}&password=${formData.password}${formData.bonus === "" ? "" : "&bonus=" + formData.bonus}&lang=${lang}${cid ? "&cid=" + cid : ""}`;
+      window.location.href = `https://${newDomain}/api/register?env=prod&game=spribe:aviator&type=${formTab}&currency=${formData.currency}&phone=${formData.phone}&password=${formData.password}${formData.bonus === "" ? "" : "&bonus=" + formData.bonus}&lang=${formData.lang}${cid ? "&cid=" + cid : ""}`;
       console.log(
         `https://${newDomain}/api/register?env=prod&game=spribe:aviator&type=${formTab}&currency=${formData.currency}&phone=${formData.phone}&password=${formData.password}${formData.bonus === "" ? "" : "&bonus=" + formData.bonus}&lang=${lang}${cid ? "&cid=" + cid : ""}`,
       );
