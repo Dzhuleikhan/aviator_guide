@@ -146,45 +146,35 @@ input:-webkit-autofill:hover {
 /* GAME COMPONENT */
 
 .game-inner.colored {
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgb(30, 44, 123) 0%,
-    rgb(13, 13, 14) 100%
-  );
+  background: radial-gradient(50% 50% at 50% 50%,
+      rgb(30, 44, 123) 0%,
+      rgb(13, 13, 14) 100%);
   animation: gradientChange 6s ease-in-out infinite;
 }
 
 @keyframes gradientChange {
   0% {
-    background: radial-gradient(
-      50% 50% at 50% 50%,
-      rgb(30, 44, 123) 0%,
-      rgb(13, 13, 14) 100%
-    );
+    background: radial-gradient(50% 50% at 50% 50%,
+        rgb(30, 44, 123) 0%,
+        rgb(13, 13, 14) 100%);
   }
 
   33% {
-    background: radial-gradient(
-      50% 50% at 50% 50%,
-      rgb(87, 27, 93) 0%,
-      rgb(13, 13, 14) 100%
-    );
+    background: radial-gradient(50% 50% at 50% 50%,
+        rgb(87, 27, 93) 0%,
+        rgb(13, 13, 14) 100%);
   }
 
   66% {
-    background: radial-gradient(
-      50% 50% at 50% 50%,
-      rgb(27, 45, 93) 0%,
-      rgb(13, 13, 14) 100%
-    );
+    background: radial-gradient(50% 50% at 50% 50%,
+        rgb(27, 45, 93) 0%,
+        rgb(13, 13, 14) 100%);
   }
 
   100% {
-    background: radial-gradient(
-      50% 50% at 50% 50%,
-      rgb(27, 93, 30) 0%,
-      rgb(13, 13, 14) 100%
-    );
+    background: radial-gradient(50% 50% at 50% 50%,
+        rgb(27, 93, 30) 0%,
+        rgb(13, 13, 14) 100%);
   }
 }
 
@@ -371,7 +361,7 @@ input:-webkit-autofill:hover {
   background-size: contain;
 }
 
-.checkbox-input:checked + .checkbox-content::before {
+.checkbox-input:checked+.checkbox-content::before {
   background: url("../img/checked.svg"), #28a809;
   background-repeat: no-repeat;
   background-size: contain;
@@ -409,11 +399,11 @@ input:-webkit-autofill:hover {
   filter: blur(4px);
 }
 
-.social-variant-input:checked + .socials-item {
+.social-variant-input:checked+.socials-item {
   background-color: #fff;
 }
 
-.social-variant-input:checked + .socials-item svg {
+.social-variant-input:checked+.socials-item svg {
   fill: #0e0f20;
 }
 
@@ -464,7 +454,7 @@ input:-webkit-autofill:hover {
   transform: translateX(-50%);
 }
 
-.terms-input.non-valid + span::before {
+.terms-input.non-valid+span::before {
   border-color: #ff5530;
 }
 
@@ -556,11 +546,9 @@ input:-webkit-autofill:hover {
 
 .next-deposit {
   background: url("../img/next-deposit-bg.webp"),
-    linear-gradient(
-      180deg,
+    linear-gradient(180deg,
       rgba(20, 130, 255, 0.4) 0%,
-      rgba(20, 130, 255, 0.4) 100%
-    );
+      rgba(20, 130, 255, 0.4) 100%);
   background-repeat: no-repeat;
   background-position: 100% 0;
   background-size: contain;
@@ -572,11 +560,9 @@ input:-webkit-autofill:hover {
 
 .your-winning {
   background: url("../img/your-winning-bg.webp"),
-    linear-gradient(
-      180deg,
+    linear-gradient(180deg,
       rgba(78, 217, 55, 0.4) 0%,
-      rgba(24, 94, 13, 0.4) 100%
-    );
+      rgba(24, 94, 13, 0.4) 100%);
   background-repeat: no-repeat;
   background-position: 100% 0;
   background-size: contain;
@@ -609,7 +595,7 @@ input:-webkit-autofill:hover {
   visibility: visible;
 }
 
-.social-variant-input:disabled + span {
+.social-variant-input:disabled+span {
   opacity: 0.4;
 }
 
@@ -738,8 +724,8 @@ input:-webkit-autofill:hover {
 }
 
 /* .form-group-email input:focus, */
-.socials-form-group-email input:focus + label,
-.socials-form-group-email input:not(:placeholder-shown) + label {
+.socials-form-group-email input:focus+label,
+.socials-form-group-email input:not(:placeholder-shown)+label {
   font-size: 12px;
   transform: translateY(-14px);
 }
@@ -815,7 +801,7 @@ input:-webkit-autofill:hover {
   top: 0;
 }
 
-.checkbox .checkbox-input:checked + .checkbox-content::before {
+.checkbox .checkbox-input:checked+.checkbox-content::before {
   background: url("../img/checked.svg") #28a809;
   background-repeat: no-repeat;
   background-position: center;
@@ -904,4 +890,26 @@ input:-webkit-autofill:hover {
 
 .scroll-lock {
   overflow: hidden;
+}
+
+.payments-list-modal div {
+  max-width: 60px;
+}
+
+@media (max-width: 500px) {
+  .modal-tabs {
+    display: flex;
+  }
+
+  .modal-tabs button {
+    font-size: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    width: 33%;
+  }
+
+  .modal-tabs button svg {
+    max-width: 20px;
+    height: auto;
+  }
 }
