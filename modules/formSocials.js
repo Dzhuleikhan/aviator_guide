@@ -265,7 +265,7 @@ if (mainForm) {
       .getAttribute("data-bonus");
 
     let formData = {};
-    formData.email = email.value;
+    formData.email = encodeURIComponent(email.value);
     formData.phone = phone.value;
     formData.password = password.value;
     formData.currency = currency.value;
@@ -325,7 +325,7 @@ if (mainForm) {
       .getAttribute("data-bonus");
 
     let formData = {};
-    formData.email = email.value;
+    formData.email = encodeURIComponent(email.value);
     formData.phone = phone.value;
     formData.password = password.value;
     formData.currency = currency.value;
