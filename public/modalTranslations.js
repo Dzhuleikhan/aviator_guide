@@ -268,7 +268,7 @@ export const modalTranslations = {
     signUpBtn: "Qeydiyyatdan keçin",
     promoApplied: "Bonus tətbiq olundu",
     bonusName: "Xoş gəldin kazino bonusu",
-    depositBonus: `bonus <span class="bonus-value"></span> <span class="bonus-currency"></span>-a qədər + 25FS`,
+    depositBonus: `bonus <span class="bonus-value"></span> <span class="bonus-currency"></span> - qədər + 25FS`,
     depositBonus2: "Depozitə 400% 6000-ə qədər",
     phoneNumber: "Telefon nömrəsi",
     password: "Şifrə",
