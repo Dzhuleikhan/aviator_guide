@@ -462,10 +462,10 @@ export const translations = {
   },
   az: {
     mainButton: "Bonus qazan <br /> 200% + 25FS",
-    waitingForNextRound: "WAITING FOR NEXT ROUND",
-    flewAway: "flew away",
-    bonusTextUnderPercent: "BONUS ON YOUR FIRST TOP-UP",
-    guideMainTitle: "bonusu necə əldə etmək?",
+    waitingForNextRound: "Növbəti oyunu gözləyin",
+    flewAway: "uçdu",
+    bonusTextUnderPercent: "İlk yükləmənizdə bonus",
+    guideMainTitle: "Bonusu necə əldə etmək olar?",
     guideItem1Title: "QEYDİYYATDAN KEÇ",
     guideItem1Text:
       "'Bonus əldə et' düyməsini klikləyərək e-mail və  şifrənizi daxil edin.",
