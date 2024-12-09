@@ -462,17 +462,16 @@ export const translations = {
   },
   az: {
     mainButton: "Bonus qazan <br /> 200% + 25FS",
-    waitingForNextRound: "WAITING FOR NEXT ROUND",
-    flewAway: "flew away",
-    bonusTextUnderPercent: "BONUS ON YOUR FIRST TOP-UP",
-    guideMainTitle: "bonusu necə əldə etmək?",
+    waitingForNextRound: "Növbəti oyunu gözləyin",
+    flewAway: "Uçdu",
+    bonusTextUnderPercent: "İlk yükləmənizdə bonus",
+    guideMainTitle: "Bonusu necə əldə etmək olar?",
     guideItem1Title: "QEYDİYYATDAN KEÇ",
     guideItem1Text:
       "'Bonus əldə et' düyməsini klikləyərək e-mail və  şifrənizi daxil edin.",
     guideItem2Title: "BONUSU AKTİVLƏŞDİRİN",
-    guideItem2Text:
-      "Bonus mərkəzində sizin üçün artıq xoşgəldin-bonusu artıq aktivdir",
-    bonusTerms: "Bonus terms",
+    guideItem2Text: "Bonus mərkəzində “xoş gəldin” bonusunuz artıq aktivdir",
+    bonusTerms: "Bonus şərtləri",
     guideItem3Title: "DEPOZİTİNİZİ YERLƏŞDİRİN",
     guideItem3Text: "Rahat ödəniş metodunu seçin və depozitinizi artırın",
     playAviator: "Aviator oyna",
